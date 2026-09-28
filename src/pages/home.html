@@ -16,7 +16,7 @@
     <!-- What we're proposing and why (shown when Notes are on) -->
     <aside class="proposal" aria-label="About this prototype">
       <div class="container">
-        <p class="proposal-eyebrow">Prototype 1 of 5 · The front door</p>
+        <p class="proposal-eyebrow">Prototype 1 of 4 · The front door</p>
         <div class="proposal-grid">
           <div><h2>What we're proposing</h2><p>A homepage that asks who you are and sends you somewhere useful, shows what's live this week, and gives the headline numbers in a form everyone can read. Around it, a notice about the move to DCC2 that links to a new page explaining it, and a route for members of the public that doesn't start at Contact us.</p></div>
           <div><h2>Why</h2><p>The current homepage runs hero, meter counter, video, innovation and careers, and none of it changes with the people arriving. At least three consultations are open as of today, one closing on 2 October, and the homepage mentions none of them. The business moves to DCC2 in November, which the site only mentions in News. And the public, who arrive in numbers we don't know but can guess at, find their page only through the "Members of the public" panel on Contact us.</p></div>
@@ -35,10 +35,10 @@
 
     <!-- Site header: existing header, with three new utility links (R10) -->
     <div class="site-mock" aria-label="Site header, as now with additions">
-      <div class="util"><div class="container"><a href="~/pages/public.html" class="util-highlight">Smart meter problem?</a><a href="~/pages/status.html" class="util-highlight">Service status</a><a href="#">Customer Engagement</a><a href="~/pages/consultations.html">Consultations</a><a href="~/pages/documents.html">Document Centre</a><a href="~/pages/glossary.html" class="util-highlight">Glossary</a></div></div>
-      <div class="main"><div class="container"><span class="wf-placeholder logo">DCC logo</span><nav aria-label="Main (mock)"><a href="#">About DCC</a><a href="#">Our Smart Network</a><a href="#">Enabling Innovation</a><a href="#">News &amp; Events</a><a href="#">Careers</a></nav><div class="right"><a href="~/pages/search.html" class="btn btn-sm btn-secondary">Search</a><a href="~/pages/join.html" class="btn btn-sm">Partner with DCC</a></div></div></div>
+      <div class="util"><div class="container"><a href="~/pages/public.html" class="util-highlight">Smart meter problem?</a><a href="~/pages/status.html" class="util-highlight">Service status</a><a href="#">Customer Engagement</a><a href="~/pages/consultations.html">Consultations</a><a href="#">Document Centre</a></div></div>
+      <div class="main"><div class="container"><span class="wf-placeholder logo">DCC logo</span><nav aria-label="Main (mock)"><a href="#">About DCC</a><a href="#">Our Smart Network</a><a href="#">Enabling Innovation</a><a href="#">News &amp; Events</a><a href="#">Careers</a></nav><div class="right"><a href="#" class="btn btn-sm btn-secondary">Search</a><a href="~/pages/join.html" class="btn btn-sm">Partner with DCC</a></div></div></div>
     </div>
-    <div class="container"><p class="wf-note" data-note="1"><span class="wf-note-label">Header</span>The header stays as it is, with three links added to the utility bar: <strong>Smart meter problem?</strong> for the public, <strong>Service status</strong> and <strong>Glossary</strong>. The notice above it can be hidden and stays hidden for the rest of the visit. <button type="button" class="btn-link" data-notice-reset>Show the notice again</button></p></div>
+    <div class="container"><p class="wf-note" data-note="1"><span class="wf-note-label">Header</span>The header stays as it is, with two links added to the utility bar: <strong>Smart meter problem?</strong> for the public, and <strong>Service status</strong>. The notice above it can be hidden and stays hidden for the rest of the visit. <button type="button" class="btn-link" data-notice-reset>Show the notice again</button></p></div>
 
     <div class="container">
       <!-- Hero, copy as live (R10) -->
@@ -69,7 +69,7 @@
               <ul>
                 <li><a href="~/pages/status.html">Service status and planned maintenance</a></li>
                 <li><a href="~/pages/consultations.html">Open consultations</a></li>
-                <li><a href="~/pages/documents.html">Charging statements and budgets</a></li>
+                <li><a href="#">Charging statements and budgets</a></li>
                 <li><a href="~/pages/events.html">Forums and events</a></li>
                 <li><a href="~/pages/performance.html">Network performance</a></li>
                 <li><a href="#">Customer Service Centre</a></li>
@@ -84,7 +84,6 @@
                 <li><a href="~/pages/join.html?type=other">The digital onboarding tool</a></li>
                 <li><a href="#">Test labs and DCC Boxed</a></li>
                 <li><a href="~/pages/partner-enquiry.html">Talk to our partnerships team</a></li>
-                <li><a href="~/pages/glossary.html">Glossary of terms</a></li>
               </ul>
             </div>
           </div>
@@ -107,7 +106,7 @@
                 <li><a href="~/pages/ownership.html">Our new ownership</a></li>
                 <li><a href="~/pages/programmes.html">What we're working on</a></li>
                 <li><a href="#">Business and Development Plan</a></li>
-                <li><a href="~/pages/documents.html">Annual reports and compliance</a></li>
+                <li><a href="#">Annual reports and compliance</a></li>
                 <li><a href="#">Price control</a></li>
               </ul>
             </div>
@@ -132,7 +131,7 @@
         <h2 class="section-title" id="week-title">This week at DCC</h2>
         <div class="week-strip">
           <div class="week-col"><h3>Consultations closing soonest</h3><ul id="week-consultations"></ul><p style="margin-top:0.75rem"><a href="~/pages/consultations.html">All consultations</a></p></div>
-          <div class="week-col"><h3>New documents</h3><ul id="week-docs"></ul><p style="margin-top:0.75rem"><a href="~/pages/documents.html">Document Centre</a></p></div>
+          <div class="week-col"><h3>New documents</h3><ul id="week-docs"></ul><p style="margin-top:0.75rem"><a href="#">Document Centre</a></p></div>
           <div class="week-col"><h3>Coming up</h3><ul id="week-events"></ul><p style="margin-top:0.75rem"><a href="~/pages/events.html">Forums and events</a></p></div>
         </div>
         <p class="wf-note" data-note="4"><span class="wf-note-label">Content</span>Fills itself: the three open consultations closing soonest, the three newest documents and the next three events. Nothing to update by hand.</p>

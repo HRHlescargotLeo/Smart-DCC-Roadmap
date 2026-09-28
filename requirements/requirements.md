@@ -1,6 +1,6 @@
 # Smart DCC website prototypes — requirements (V1)
 
-Numbered requirements for the five prototypes, traced to ideas in the phase 1 opportunities list (#n).
+Numbered requirements for the four prototypes, traced to ideas in the phase 1 opportunities list (#n).
 Every section in `src/` carries an HTML comment naming the requirement it meets.
 
 ## Global
@@ -30,14 +30,14 @@ Every section in `src/` carries an HTML comment naming the requirement it meets.
 - R26 Forums and events calendar with type filter, register and add to calendar (.ics). (#36)
 - R27 Customer Engagement "Latest consultations" filled automatically (shown via R13). (#37)
 
-## 3. Find anything
+## Parked: Find anything (separate search project; pages kept, not linked)
 - R30 Site search: synonyms, stop words, pages ranked above documents, duplicates removed, archived hidden by default, best bets for glossary terms and public questions, type tabs with counts. (#7, #8)
 - R31 Document Centre: combinable facets (category, regulatory year, programme, file type), keyword filter, result count, sort, paging, mobile filter button. (#23, #48)
 - R32 Document versions: current badge, earlier versions listed under each document, superseded hidden by default. (#24)
 - R33 HTML glossary: A–Z, filter, addressable terms. (#25, #39)
 - R34 Glossary terms in running text show definitions in place. (#25, #26)
 
-## 4. Status and performance
+## 3. Status and performance
 - R40 Status summary with time of last update. (#14)
 - R41 Service list with state shown by shape and words. (#14)
 - R42 Headline statistics rendered as text from the start. (#11)
@@ -47,9 +47,9 @@ Every section in `src/` carries an HTML comment naming the requirement it meets.
 - R46 Strategy scorecard against the four strategic outcomes. (#46)
 - R47 One "latest plan" link used everywhere. (#17)
 
-## 5. Joining the network
+## 4. Joining the network
 - R50 Pathfinder by organisation type, remembered for the visit, linkable with ?type=. (#27)
 - R51 All route steps on one page, with who you deal with, typical time and a done tick. (#28)
-- R52 Digital onboarding tool promoted for Other Users; descriptive link text, no "here". (#26, #27)
+- R52 Digital onboarding tool promoted for Other Users; descriptive link text, no "here"; term definitions shown in place, without linking to the parked glossary. (#26, #27)
 - R53 Partner enquiry routed by organisation type with a conditional question and visible destination team. (#29)
 - R54 Customer quote placeholder per route, drawn from existing testimonials. (#30)

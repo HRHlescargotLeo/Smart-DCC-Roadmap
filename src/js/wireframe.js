@@ -495,7 +495,7 @@
       pop.className = 'term-pop';
       pop.setAttribute('role', 'dialog');
       pop.setAttribute('aria-label', g.term);
-      pop.innerHTML = '<b>' + esc(g.term) + (g.full ? ': ' + esc(g.full) : '') + '</b>' + esc(g.def) + '<br><a href="' + pageHref('glossary.html') + '#term-' + slug(g.term) + '">See it in the glossary</a>';
+      pop.innerHTML = '<b>' + esc(g.term) + (g.full ? ': ' + esc(g.full) : '') + '</b>' + esc(g.def);
       document.body.appendChild(pop);
       var r = t.getBoundingClientRect();
       var left = Math.min(window.scrollX + r.left, window.scrollX + document.documentElement.clientWidth - pop.offsetWidth - 12);
@@ -557,7 +557,7 @@
     }).join('');
     var docs = (window.DCC_DOCS || []).slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; }).slice(0, 3);
     $('#week-docs').innerHTML = docs.map(function (x) {
-      return '<li><a href="' + pageHref('documents.html') + '">' + esc(x.t) + '</a><span class="wf-meta">' + esc(x.cat) + ' · ' + longDate(x.date) + '</span></li>';
+      return '<li><a href="#">' + esc(x.t) + '</a><span class="wf-meta">' + esc(x.cat) + ' · ' + longDate(x.date) + '</span></li>';
     }).join('');
     var ev = (window.DCC_EVENTS || []).filter(function (e) { return daysUntil(e.date) >= 0; }).slice(0, 3);
     $('#week-events').innerHTML = ev.map(function (e) {
@@ -827,7 +827,7 @@
   }
 
   /* ======================================================================
-     Prototype 3: Find anything (R30–R35)
+     Parked: Find anything (R30–R35). Now a separate search project; pages kept but not linked from the pack
      ====================================================================== */
   var DOCS = window.DCC_DOCS || [];
 
@@ -1008,7 +1008,7 @@
   }
 
   /* ======================================================================
-     Prototype 4: Status and performance (R40–R47)
+     Prototype 3: Status and performance (R40–R47)
      ====================================================================== */
   function initStatus() {
     var host = $('#svc-list');
@@ -1133,7 +1133,7 @@
         return '<article class="prog"><span class="state ' + p.state + '">' + label[p.state] + '</span><h3>' + esc(p.name) + '</h3>' +
           '<div class="progress" role="img" aria-label="' + p.pct + '% complete"><i style="width:' + p.pct + '%"></i></div>' +
           '<dl class="kv"><dt>Stage</dt><dd>' + esc(p.stage) + '</dd><dt>' + (p.state === 'complete' ? 'Completed' : 'Next milestone') + '</dt><dd>' + esc(p.state === 'complete' ? p.nextDate : p.next + ', ' + p.nextDate) + '</dd><dt>Target</dt><dd>' + p.year + '</dd></dl>' +
-          '<div class="row" style="gap:1rem;font-size:0.875rem"><a href="' + pageHref('documents.html') + '">Documents</a><a href="' + pageHref('consultations.html') + '">Consultations</a></div></article>';
+          '<div class="row" style="gap:1rem;font-size:0.875rem"><a href="#">Documents</a><a href="' + pageHref('consultations.html') + '">Consultations</a></div></article>';
       }).join('');
       $('#prog-count').textContent = rows.length + ' programme' + (rows.length === 1 ? '' : 's');
     }
@@ -1148,7 +1148,7 @@
   }
 
   /* ======================================================================
-     Prototype 5: Joining the network (R50–R55)
+     Prototype 4: Joining the network (R50–R55)
      ====================================================================== */
   function initJoin() {
     var app = $('#join-app');

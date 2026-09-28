@@ -1,6 +1,6 @@
 # Smart DCC — website improvement prototypes (V2)
 
-Five clickable prototypes for improvements to smartdcc.co.uk, prepared by ClerksWell following the
+Four clickable prototypes for improvements to smartdcc.co.uk, prepared by ClerksWell following the
 phase 1 review (28 September 2026). The Smart DCC design layer (colours, Lato, pill buttons, gradient page
 heads) lives entirely in `src/css/theme.css`; remove that file to get the greyscale prototypes back.
 
@@ -20,9 +20,11 @@ GitHub Pages publishes from the `docs/` folder on `main`
 ## Prototypes
 1. The front door — `pages/home.html`, `pages/ownership.html`, `pages/public.html`
 2. Consultations and engagement — `pages/consultations.html`, `pages/consultation.html?c=<id>`, `pages/events.html`
-3. Find anything — `pages/search.html`, `pages/documents.html`, `pages/glossary.html`
-4. Status and performance — `pages/status.html`, `pages/performance.html`, `pages/programmes.html`
-5. Joining the network — `pages/join.html`, `pages/partner-enquiry.html`
+3. Status and performance — `pages/status.html`, `pages/performance.html`, `pages/programmes.html`
+4. Joining the network — `pages/join.html`, `pages/partner-enquiry.html`
+
+Parked: the Find anything prototype (`pages/search.html`, `pages/documents.html`, `pages/glossary.html`)
+is kept in the repo but not linked from anywhere in the pack, as search is now a separate project.
 
 Module library: `modules/library.html`. Requirements: `requirements/requirements.md`.
 
