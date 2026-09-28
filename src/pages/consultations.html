@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultations — Smart DCC prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+  <!-- @@include subnav-2.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 2 of 5 · Consultations and engagement</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>A consultations listing that puts open consultations first and says how long is left, filters by topic and audience, and lets people sign up for alerts. Each consultation gets an online response form and a strip showing where it is in its life, from open to DCC's conclusions. Forums and events get a calendar.</p></div>
+          <div><h2>Why</h2><p>The listing already has status filters, which is more than many sites manage. But open and closed consultations look the same, dates are given as a range to work out for yourself, and a consultation and DCC's conclusions on it appear as two unrelated listings. Responding means downloading a Word template and emailing it, and on the VWAN consultation the email link doesn't work: the full stop after the address is inside the link. We found no way to be told when a new consultation opens.</p></div>
+        </div>
+        <p class="proposal-foot">Titles, statuses and dates are the live listing on 28 September 2026. Topics and audiences are our tagging. The upcoming budget consultation is a sample.</p>
+      </div>
+    </aside>
+
+    <div class="band">
+      <div class="container">
+        <h1>Consultations</h1>
+        <p class="lead">Have your say on proposed changes to our services, charging and the documents that govern them.</p>
+        <div class="row" style="gap:0.75rem;flex-wrap:wrap">
+          <button type="button" class="btn" data-modal-open="alert-modal">Get alerts for new consultations</button>
+          <a class="btn btn-secondary" href="~/pages/events.html">Forums and events</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:1.5rem">
+      <!-- Filters (R21) -->
+      <div class="row" role="group" aria-label="Status" style="gap:0.5rem;flex-wrap:wrap;margin-bottom:1rem">
+        <button type="button" class="chip" data-cstatus="all" aria-pressed="true">All <span class="n"></span></button>
+        <button type="button" class="chip" data-cstatus="open" aria-pressed="false">Open <span class="n"></span></button>
+        <button type="button" class="chip" data-cstatus="upcoming" aria-pressed="false">Upcoming <span class="n"></span></button>
+        <button type="button" class="chip" data-cstatus="closed" aria-pressed="false">Closed <span class="n"></span></button>
+        <button type="button" class="chip" data-cstatus="response" aria-pressed="false">DCC responses <span class="n"></span></button>
+      </div>
+      <div class="list-toolbar">
+        <div class="field"><label for="cons-q">Search consultations</label><input type="search" id="cons-q" placeholder="For example: VWAN, charging"></div>
+        <div class="field"><label for="cons-topic">Topic</label><select id="cons-topic"></select></div>
+        <div class="field"><label for="cons-aud">Who it's for</label><select id="cons-aud"></select></div>
+        <div class="field"><label for="cons-sort">Sort by</label><select id="cons-sort"><option value="closing">Open first, closing soonest</option><option value="latest">Latest</option><option value="az">A to Z</option></select></div>
+      </div>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The default order puts open consultations first, closing soonest at the top, then upcoming, then responses and closed ones, newest first. Anything closing within seven days is marked. Counts on the chips update as consultations change status; nobody edits them.</p>
+      <p class="result-count" id="cons-count" aria-live="polite"></p>
+      <ul class="rows" id="cons-list"></ul>
+      <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>The live listing has 42 pages going back several years. Should consultations older than, say, three years move to an archive that search still covers?</p>
+    </div>
+
+    <!-- Alerts (R25) -->
+    <div class="wf-modal" id="alert-modal" role="dialog" aria-modal="true" aria-labelledby="alert-title">
+      <div class="wf-modal-panel">
+        <button type="button" class="wf-modal-close" aria-label="Close">&times;</button>
+        <form class="alert-form" data-done="alert-done" novalidate>
+          <h2 id="alert-title" style="font-size:1.375rem">Get alerts by email</h2>
+          <p class="wf-meta">We'll email you when something new is published on the topics you choose. You can change or stop them at any time.</p>
+          <fieldset style="margin-bottom:1rem">
+            <legend>What would you like to hear about?</legend>
+            <label class="check"><input type="checkbox" value="New consultations" id="al-1" checked> New consultations</label>
+            <label class="check"><input type="checkbox" value="DCC responses and conclusions" id="al-2"> DCC responses and conclusions</label>
+            <label class="check"><input type="checkbox" value="Charging statements and budgets" id="al-3"> Charging statements and budgets</label>
+            <label class="check"><input type="checkbox" value="Planned maintenance" id="al-4"> Planned maintenance</label>
+            <label class="check"><input type="checkbox" value="Forums and events" id="al-5"> Forums and events</label>
+            <p class="field-error" data-topic-error hidden>Choose at least one topic</p>
+          </fieldset>
+          <div class="field"><label for="al-email">Work email address</label><input type="email" id="al-email" required autocomplete="email"><p class="field-error" hidden>Enter an email address like name@example.com</p></div>
+          <div class="field"><label for="al-org">Organisation</label><input type="text" id="al-org"></div>
+          <button type="submit" class="btn">Sign up</button>
+        </form>
+        <div id="alert-done" hidden>
+          <h2 style="font-size:1.375rem">Check your email</h2>
+          <p>We've sent a link to confirm your alerts for: <strong data-topics></strong>.</p>
+          <button type="button" class="btn wf-modal-close">Done</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>

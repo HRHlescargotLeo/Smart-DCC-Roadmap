@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help for the public — Smart DCC prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces Smart DCC's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="Smart DCC prototypes, overview">Smart DCC <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/home.html" data-proto="home ownership public"><span class="n">1</span> Front door</a></li>
+          <li><a href="../pages/consultations.html" data-proto="consultations consultation events"><span class="n">2</span> Consultations</a></li>
+          <li><a href="../pages/search.html" data-proto="search documents glossary"><span class="n">3</span> Find anything</a></li>
+          <li><a href="../pages/status.html" data-proto="status performance programmes"><span class="n">4</span> Status and performance</a></li>
+          <li><a href="../pages/join.html" data-proto="join partner-enquiry"><span class="n">5</span> Joining the network</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+    <!-- Sub-pages of prototype 1 -->
+    <nav class="proto-sub" aria-label="Pages in this prototype"><div class="container"><a href="../pages/home.html" data-sub="home">Homepage</a><a href="../pages/ownership.html" data-sub="ownership">Our new ownership</a><a href="../pages/public.html" data-sub="public">Help for the public</a></div></nav>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 1 of 5 · Help for the public</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Keep the existing consumer page, which is honest and clear, and make it findable: a link in the header, a place in site search, and a single question at the top that gives one answer rather than ten. Add the contact form the page already refers to.</p></div>
+          <div><h2>Why</h2><p>Today the page is reached through Contact us, then the "Members of the public" panel. Searching the site for "my smart meter is not working" returns nothing, even though an FAQ has almost exactly that title. Two of the answers ask people to "complete the contact us form", and the Contact us page has no form on it.</p></div>
+        </div>
+        <p class="proposal-foot">Answer text is adapted from the live consumer page. The contact form is new.</p>
+      </div>
+    </aside>
+
+    <div class="band">
+      <div class="container">
+        <h1>Help with your smart meter</h1>
+        <p class="lead">We run the secure network that carries messages between smart meters and energy suppliers. We can't see or change your meter, your bill or your display, but we can point you to the people who can.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Help finder (R17) -->
+      <section class="sp finder" aria-labelledby="finder-title">
+        <h2 id="finder-title" style="font-size:1.375rem">What do you need help with?</h2>
+        <div class="field" style="max-width:520px">
+          <label for="finder-q">Choose the closest match</label>
+          <select id="finder-q">
+            <option value="">Choose one</option>
+            <option value="meter">My smart meter isn't working</option>
+            <option value="bill">I have a problem with my bill</option>
+            <option value="ihd">My in-home display isn't working or connected</option>
+            <option value="e7">My Economy 7 or 10 timings are wrong</option>
+            <option value="install">I want a smart meter installed</option>
+            <option value="coverage">Is my area covered?</option>
+            <option value="smets1">My older smart meter hasn't moved to your network</option>
+            <option value="data">I'm worried about my data</option>
+          </select>
+        </div>
+        <div class="finder-answer" id="finder-answer" hidden aria-live="polite">
+          <h3>Answer</h3>
+          <p data-a="p"></p>
+          <dl class="who-box"><dt>Who to contact</dt><dd data-a="who"></dd></dl>
+        </div>
+        <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Choosing an option shows one answer and who to contact. Nothing is sent anywhere. The same answers sit in the questions below for people who'd rather browse.</p>
+      </section>
+
+      <div class="two-col">
+        <!-- FAQ with filter (R18) -->
+        <section aria-labelledby="faq-title">
+          <h2 class="section-title" id="faq-title">Common questions</h2>
+          <div class="field" style="max-width:420px">
+            <label for="faq-filter">Filter the questions</label>
+            <input type="search" id="faq-filter" placeholder="For example: display, bill, aerial">
+          </div>
+          <p id="faq-none" class="empty-state" hidden>No questions match. Try another word, or use the form to contact us.</p>
+          <div class="accordion" id="faq">
+            <div class="accordion-item"><button type="button" class="accordion-title">I have a problem with my energy bills<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>No billing data is visible to DCC. Messages on our network are encrypted and can only be read by your energy supplier, who is best placed to sort out any problem with your bill.</p></div></div>
+            <div class="accordion-item"><button type="button" class="accordion-title">The timing on my Economy 7 or 10 heating is wrong<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>Your energy supplier sets the timings on your smart meter remotely. Please contact them.</p></div></div>
+            <div class="accordion-item"><button type="button" class="accordion-title">My in-home display (IHD) isn't working or connected<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>Your energy supplier provides the display, so please contact them. Citizens Advice also has guidance on fixing in-home displays.</p></div></div>
+            <div class="accordion-item"><button type="button" class="accordion-title">My smart meter isn't working<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>Your energy supplier maintains your smart meter and is best placed to investigate. If they think the problem is with our network, they raise an incident with us.</p></div></div>
+            <div class="accordion-item"><button type="button" class="accordion-title">I want a smart meter installed<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>Smart Energy GB has information about smart meters and how to ask your energy supplier for one.</p></div></div>
+            <div class="accordion-item"><button type="button" class="accordion-title">When will my first-generation (SMETS1) meter move to your network?<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>Moving first-generation meters on to our network is nearly complete. If yours still hasn't moved, use the form on this page.</p></div></div>
+            <div class="accordion-item"><button type="button" class="accordion-title">When will you cover my area?<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>Our network covers the vast majority of homes in Britain. Your energy supplier can confirm whether it reaches your home.</p></div></div>
+            <div class="accordion-item"><button type="button" class="accordion-title">My meter needs a firmware update<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>Energy suppliers use our network to send firmware to meters. Ask your supplier when they plan to update yours.</p></div></div>
+            <div class="accordion-item"><button type="button" class="accordion-title">I need a T3 aerial installed<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>T3 aerials are fitted where the communications provider says one is needed. Your energy supplier can arrange this for you through the industry process.</p></div></div>
+            <div class="accordion-item"><button type="button" class="accordion-title">I'm worried about you holding my data<span class="accordion-icon">&#9662;</span></button><div class="accordion-content"><p>Data on our network is encrypted and can only be read by the supplier responsible for your meter. We see the type of each message, never its contents.</p></div></div>
+          </div>
+        </section>
+
+        <!-- Contact form for the cases DCC does handle (R19) -->
+        <aside class="panel surface" aria-labelledby="pc-title">
+          <h2 id="pc-title" style="font-size:1.25rem">Still need us?</h2>
+          <p class="wf-meta">Use this if your supplier has told you there's no coverage, or your older meter hasn't moved to our network. For anything else, your supplier is quicker.</p>
+          <form id="public-contact" novalidate>
+            <div class="field"><label for="pc-name">Your name</label><input type="text" id="pc-name" required autocomplete="name"><p class="field-error" hidden>Enter your name</p></div>
+            <div class="field"><label for="pc-email">Email address</label><input type="email" id="pc-email" required autocomplete="email"><p class="field-error" hidden>Enter an email address like name@example.com</p></div>
+            <div class="field"><label for="pc-postcode">Postcode</label><input type="text" id="pc-postcode" required autocomplete="postal-code" style="max-width:10rem"><p class="field-error" hidden>Enter your postcode</p></div>
+            <div class="field"><label for="pc-reason">What's it about?</label><select id="pc-reason" required><option value="">Choose one</option><option>No network coverage at my home</option><option>My older meter hasn't moved to the network</option></select><p class="field-error" hidden>Choose what it's about</p></div>
+            <div class="field"><label for="pc-supplier">Your energy supplier</label><input type="text" id="pc-supplier"></div>
+            <button type="submit" class="btn">Send</button>
+          </form>
+          <div id="public-contact-done" hidden>
+            <h2 style="font-size:1.25rem">Thanks, we've got your message</h2>
+            <p>We'll reply by email within ten working days. [Sample response time for DCC to confirm.]</p>
+          </div>
+          <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Who in DCC would answer these, and how many should we expect? The live page asks people to "complete the contact us form", so either the form existed once or the wording is aspirational.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces Smart DCC's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Prototypes for discussion · Figures marked live are from smartdcc.co.uk on 28 September 2026; everything else is sample data</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+</body>
+</html>

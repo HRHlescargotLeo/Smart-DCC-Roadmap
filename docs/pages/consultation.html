@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consultation — Smart DCC prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces Smart DCC's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="Smart DCC prototypes, overview">Smart DCC <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/home.html" data-proto="home ownership public"><span class="n">1</span> Front door</a></li>
+          <li><a href="../pages/consultations.html" data-proto="consultations consultation events"><span class="n">2</span> Consultations</a></li>
+          <li><a href="../pages/search.html" data-proto="search documents glossary"><span class="n">3</span> Find anything</a></li>
+          <li><a href="../pages/status.html" data-proto="status performance programmes"><span class="n">4</span> Status and performance</a></li>
+          <li><a href="../pages/join.html" data-proto="join partner-enquiry"><span class="n">5</span> Joining the network</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+    <!-- Sub-pages of prototype 2 -->
+    <nav class="proto-sub" aria-label="Pages in this prototype"><div class="container"><a href="../pages/consultations.html" data-sub="consultations">Consultations</a><a href="../pages/consultation.html?c=vwan" data-sub="consultation">A consultation</a><a href="../pages/events.html" data-sub="events">Forums and events</a></div></nav>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 2 of 5 · A consultation</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Each consultation page shows its status and deadline at the top, where it sits in its life from open to DCC's conclusions, and the documents in one list. Respondents can answer online, question by question, save a draft and come back, and get a receipt. The Word template stays for anyone who prefers it.</p></div>
+          <div><h2>Why</h2><p>On the live VWAN consultation the only way to respond is to download a Word form and email it to an address whose link doesn't work, because the full stop after it is part of the link. Online responses are also easier for DCC to analyse, which matters when a consultation draws responses from dozens of parties. Whether DCC wants that is a fair question: some respondents will want to attach a formal letter whatever form we give them.</p></div>
+        </div>
+        <p class="proposal-foot">Opens on the VWAN consultation. Try another from the listing: a closed one, a DCC response, or the sample upcoming one, to see how the page changes.</p>
+      </div>
+    </aside>
+
+    <div id="cons-app">
+      <div class="band">
+        <div class="container">
+          <p class="wf-meta" style="margin-bottom:0.25rem"><a href="../pages/consultations.html">Consultations</a></p>
+          <div class="row" style="gap:0.75rem;align-items:center;flex-wrap:wrap;margin-bottom:0.5rem"><span id="c-status"></span><span class="wf-meta" id="c-dates"></span></div>
+          <h1 id="c-title">Consultation</h1>
+          <p class="wf-meta" id="c-topic" style="margin:0"></p>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- Lifecycle strip (R24) -->
+        <section class="sp" aria-label="Where this consultation is up to">
+          <ol class="lifecycle" id="c-life"></ol>
+          <p class="wf-meta" id="c-related" style="margin-top:0.75rem"></p>
+          <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The strip is worked out from the consultation's dates, so it moves on by itself. When DCC publishes conclusions, they're linked from the consultation, and the conclusions link back.</p>
+        </section>
+
+        <div class="two-col">
+          <div>
+            <section aria-labelledby="c-sum-title">
+              <h2 class="section-title" id="c-sum-title">Summary</h2>
+              <p id="c-summary"></p>
+            </section>
+
+            <!-- Closed or upcoming state -->
+            <section class="sp panel surface" id="c-closed" hidden>
+              <h2 style="font-size:1.25rem">You can't respond to this consultation</h2>
+              <p id="c-closed-text" style="margin:0"></p>
+            </section>
+
+            <!-- Online response (R23) -->
+            <section class="sp" id="c-respond" aria-labelledby="resp-title">
+              <h2 class="section-title" id="resp-title">Respond online</h2>
+              <p>Responses close at <strong id="c-deadline"></strong>. Answer as many questions as you like. Your draft saves as you type.</p>
+              <form id="response-form" novalidate>
+                <fieldset class="form-grid">
+                  <legend class="visually-hidden">About you</legend>
+                  <div class="field"><label for="r-name">Your name</label><input type="text" id="r-name" name="r-name" required autocomplete="name"><p class="field-error" hidden>Enter your name</p></div>
+                  <div class="field"><label for="r-org">Organisation</label><input type="text" id="r-org" name="r-org" required autocomplete="organization"><p class="field-error" hidden>Enter your organisation</p></div>
+                  <div class="field"><label for="r-email">Email address</label><input type="email" id="r-email" name="r-email" required autocomplete="email"><p class="field-error" hidden>Enter an email address like name@example.com</p></div>
+                  <div class="field"><label for="r-type">You're responding as</label><select id="r-type" name="r-type"><option>Energy supplier</option><option>Network operator</option><option>Other User</option><option>Manufacturer</option><option>Other</option></select></div>
+                </fieldset>
+
+                <div class="q-block">
+                  <h3>Question 1. Do you agree with the proposed changes to SEC Section F?</h3>
+                  <div class="radio-row" role="radiogroup" aria-label="Question 1">
+                    <label class="check"><input type="radio" name="q1" value="Agree" id="q1-a"> Agree</label>
+                    <label class="check"><input type="radio" name="q1" value="Partly agree" id="q1-b"> Partly agree</label>
+                    <label class="check"><input type="radio" name="q1" value="Disagree" id="q1-c"> Disagree</label>
+                  </div>
+                  <div class="field"><label for="q1-text">Please explain your answer</label><textarea id="q1-text" name="q1-text" rows="4" maxlength="3000" data-answer></textarea><p class="field-hint count-out"></p></div>
+                </div>
+                <div class="q-block">
+                  <h3>Question 2. Do you agree with the proposed changes to SEC Appendix I?</h3>
+                  <div class="radio-row" role="radiogroup" aria-label="Question 2">
+                    <label class="check"><input type="radio" name="q2" value="Agree" id="q2-a"> Agree</label>
+                    <label class="check"><input type="radio" name="q2" value="Partly agree" id="q2-b"> Partly agree</label>
+                    <label class="check"><input type="radio" name="q2" value="Disagree" id="q2-c"> Disagree</label>
+                  </div>
+                  <div class="field"><label for="q2-text">Please explain your answer</label><textarea id="q2-text" name="q2-text" rows="4" maxlength="3000" data-answer></textarea><p class="field-hint count-out"></p></div>
+                </div>
+                <div class="q-block">
+                  <h3>Question 3. Is there anything else you'd like DCC to consider?</h3>
+                  <div class="field"><label for="q3-text">Your comments</label><textarea id="q3-text" name="q3-text" rows="4" maxlength="3000" data-answer></textarea><p class="field-hint count-out"></p></div>
+                </div>
+                <p class="field-error" id="q-error" hidden>Answer at least one question before you submit.</p>
+                <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>The questions here are placeholders, as we haven't reproduced the consultation document. Each consultation would set its own questions in the CMS.</p>
+
+                <fieldset class="field" style="margin-top:1.25rem">
+                  <legend>Can we publish your response?</legend>
+                  <label class="check"><input type="radio" name="r-publish" value="Yes" id="rp-1" required> Yes, with my organisation's name</label>
+                  <label class="check"><input type="radio" name="r-publish" value="Anonymously" id="rp-2"> Yes, but without my organisation's name</label>
+                  <label class="check"><input type="radio" name="r-publish" value="No" id="rp-3"> No, keep it confidential</label>
+                  <p class="field-error" hidden>Tell us whether we can publish your response</p>
+                </fieldset>
+                <div class="field"><label for="r-file">Attach a letter or supporting document (optional)</label><input type="file" id="r-file" name="r-file"></div>
+                <div class="row" style="gap:0.75rem;flex-wrap:wrap;margin-top:1rem">
+                  <button type="submit" class="btn">Submit response</button>
+                  <button type="button" class="btn btn-secondary" id="save-draft">Save and come back later</button>
+                </div>
+                <p class="saved-note" id="draft-note" aria-live="polite"></p>
+              </form>
+              <div class="confirm-box" id="response-done" hidden>
+                <h2>Response submitted</h2>
+                <p>Your reference is <strong id="ref"></strong>. We've emailed a copy of your answers to <span id="done-email"></span>.</p>
+                <p>You can change your response until the consultation closes, using the link in that email.</p>
+              </div>
+            </section>
+          </div>
+
+          <aside>
+            <div class="panel surface">
+              <h2 style="font-size:1.125rem">Documents</h2>
+              <p class="wf-meta" data-not-vwan hidden>[This consultation's documents, as listed on the live page]</p>
+              <ul class="doc-list" data-vwan>
+                <li><a href="#">VWAN Arrangements Consultation (September 2026)</a><span class="wf-meta">PDF, 931 KB</span></li>
+                <li><a href="#">Proposed changes to SEC Section F</a><span class="wf-meta">DOCX, 106 KB</span></li>
+                <li><a href="#">Proposed changes to SEC Appendix I</a><span class="wf-meta">DOCX, 89 KB</span></li>
+                <li><a href="#">Proposed changes to SEC Appendix BA</a><span class="wf-meta">DOCX, 468 KB</span></li>
+                <li><a href="#">Response form (Word)</a><span class="wf-meta">DOCX, 85 KB</span></li>
+              </ul>
+            </div>
+            <div class="panel" style="margin-top:1rem">
+              <h2 style="font-size:1.125rem">Prefer to email?</h2>
+              <p class="wf-meta">Send the Word response form to:</p>
+              <span class="copy-field"><code>consultations@smartdcc.co.uk</code><button type="button" data-copy="consultations@smartdcc.co.uk">Copy</button></span>
+              <p class="wf-note" data-note="3"><span class="wf-note-label">Fix</span>On the live page this link is <code>mailto:consultations@smartdcc.co.uk.</code> with the full stop inside, so it opens a message to an address that doesn't exist.</p>
+            </div>
+            <div class="panel" style="margin-top:1rem" data-vwan>
+              <h2 style="font-size:1.125rem">Briefing session</h2>
+              <p class="wf-meta">VWAN consultation briefing, 14 October, online. [Sample]</p>
+              <a href="../pages/events.html">See forums and events</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces Smart DCC's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Prototypes for discussion · Figures marked live are from smartdcc.co.uk on 28 September 2026; everything else is sample data</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+</body>
+</html>

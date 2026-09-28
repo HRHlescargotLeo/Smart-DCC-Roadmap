@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage — Smart DCC prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces Smart DCC's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="Smart DCC prototypes, overview">Smart DCC <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/home.html" data-proto="home ownership public"><span class="n">1</span> Front door</a></li>
+          <li><a href="../pages/consultations.html" data-proto="consultations consultation events"><span class="n">2</span> Consultations</a></li>
+          <li><a href="../pages/search.html" data-proto="search documents glossary"><span class="n">3</span> Find anything</a></li>
+          <li><a href="../pages/status.html" data-proto="status performance programmes"><span class="n">4</span> Status and performance</a></li>
+          <li><a href="../pages/join.html" data-proto="join partner-enquiry"><span class="n">5</span> Joining the network</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+    <!-- Sub-pages of prototype 1 -->
+    <nav class="proto-sub" aria-label="Pages in this prototype"><div class="container"><a href="../pages/home.html" data-sub="home">Homepage</a><a href="../pages/ownership.html" data-sub="ownership">Our new ownership</a><a href="../pages/public.html" data-sub="public">Help for the public</a></div></nav>
+
+
+  <main id="main" class="flush">
+    <!-- What we're proposing and why (shown when Notes are on) -->
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 1 of 5 · The front door</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>A homepage that asks who you are and sends you somewhere useful, shows what's live this week, and gives the headline numbers in a form everyone can read. Around it, a notice about the move to DCC2 that links to a new page explaining it, and a route for members of the public that doesn't start at Contact us.</p></div>
+          <div><h2>Why</h2><p>The current homepage runs hero, meter counter, video, innovation and careers, and none of it changes with the people arriving. At least three consultations are open as of today, one closing on 2 October, and the homepage mentions none of them. The business moves to DCC2 in November, which the site only mentions in News. And the public, who arrive in numbers we don't know but can guess at, find their page only through the "Members of the public" panel on Contact us.</p></div>
+        </div>
+        <p class="proposal-foot">Headline figures are live from smartdcc.co.uk on 28 September 2026. Links in the audience panels go to pages in this pack where one exists.</p>
+      </div>
+    </aside>
+
+    <!-- Transition notice, site-wide until January 2027 (R11) -->
+    <div class="notice-bar" id="notice-bar" role="region" aria-label="Notice">
+      <div class="container">
+        <p><strong>DCC is moving to new ownership in November 2026.</strong> Our services, contracts and contacts stay the same. <a href="../pages/ownership.html">What's changing</a></p>
+        <button type="button" class="notice-close">Hide this</button>
+      </div>
+    </div>
+
+    <!-- Site header: existing header, with three new utility links (R10) -->
+    <div class="site-mock" aria-label="Site header, as now with additions">
+      <div class="util"><div class="container"><a href="../pages/public.html" class="util-highlight">Smart meter problem?</a><a href="../pages/status.html" class="util-highlight">Service status</a><a href="#">Customer Engagement</a><a href="../pages/consultations.html">Consultations</a><a href="../pages/documents.html">Document Centre</a><a href="../pages/glossary.html" class="util-highlight">Glossary</a></div></div>
+      <div class="main"><div class="container"><span class="wf-placeholder logo">DCC logo</span><nav aria-label="Main (mock)"><a href="#">About DCC</a><a href="#">Our Smart Network</a><a href="#">Enabling Innovation</a><a href="#">News &amp; Events</a><a href="#">Careers</a></nav><div class="right"><a href="../pages/search.html" class="btn btn-sm btn-secondary">Search</a><a href="../pages/join.html" class="btn btn-sm">Partner with DCC</a></div></div></div>
+    </div>
+    <div class="container"><p class="wf-note" data-note="1"><span class="wf-note-label">Header</span>The header stays as it is, with three links added to the utility bar: <strong>Smart meter problem?</strong> for the public, <strong>Service status</strong> and <strong>Glossary</strong>. The notice above it can be hidden and stays hidden for the rest of the visit. <button type="button" class="btn-link" data-notice-reset>Show the notice again</button></p></div>
+
+    <div class="container">
+      <!-- Hero, copy as live (R10) -->
+      <div class="hero-block">
+        <div>
+          <p class="wf-meta" style="margin-bottom:0.5rem">Our mission</p>
+          <h1>Smarter energy for a greener tomorrow</h1>
+          <p class="lead">We run the secure network that connects smart meters in homes and businesses across Britain to the energy companies that supply them.</p>
+          <a class="btn btn-secondary" href="#">What we do</a>
+        </div>
+        <div class="wf-placeholder ratio-16-9">Hero video, as now</div>
+      </div>
+
+      <!-- Audience picker (R12) -->
+      <section class="audience" aria-labelledby="aud-title">
+        <h2 class="audience-q" id="aud-title">What brings you here?</h2>
+        <div class="tabs" role="tablist" aria-label="Choose who you are">
+          <button type="button" class="tab active" data-tab="aud-industry" aria-selected="true">Energy supplier or network operator</button>
+          <button type="button" class="tab" data-tab="aud-new" aria-selected="false">New to DCC or innovating</button>
+          <button type="button" class="tab" data-tab="aud-public" aria-selected="false">I have a smart meter</button>
+          <button type="button" class="tab" data-tab="aud-gov" aria-selected="false">Industry and government</button>
+          <button type="button" class="tab" data-tab="aud-jobs" aria-selected="false">Working at DCC</button>
+        </div>
+        <div>
+          <div class="tab-panel active" id="aud-industry" role="tabpanel">
+            <div class="audience-panel">
+              <p>Service status, consultations, charging and the documents you use most, in one place.</p>
+              <ul>
+                <li><a href="../pages/status.html">Service status and planned maintenance</a></li>
+                <li><a href="../pages/consultations.html">Open consultations</a></li>
+                <li><a href="../pages/documents.html">Charging statements and budgets</a></li>
+                <li><a href="../pages/events.html">Forums and events</a></li>
+                <li><a href="../pages/performance.html">Network performance</a></li>
+                <li><a href="#">Customer Service Centre</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="tab-panel" id="aud-new" role="tabpanel">
+            <div class="audience-panel">
+              <p>How to join the network, what it involves for your type of organisation, and our test labs.</p>
+              <ul>
+                <li><a href="../pages/join.html">Joining the network, step by step</a></li>
+                <li><a href="../pages/join.html?type=other">The digital onboarding tool</a></li>
+                <li><a href="#">Test labs and DCC Boxed</a></li>
+                <li><a href="../pages/partner-enquiry.html">Talk to our partnerships team</a></li>
+                <li><a href="../pages/glossary.html">Glossary of terms</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="tab-panel" id="aud-public" role="tabpanel">
+            <div class="audience-panel">
+              <p>We run the network behind smart meters, but your energy supplier looks after your meter, display and bills. We can help you find the right people.</p>
+              <ul>
+                <li><a href="../pages/public.html">My smart meter isn't working</a></li>
+                <li><a href="../pages/public.html">A problem with my bill</a></li>
+                <li><a href="../pages/public.html">My in-home display isn't connected</a></li>
+                <li><a href="../pages/public.html">Is my area covered?</a></li>
+                <li><a href="../pages/public.html">What happens to my data</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="tab-panel" id="aud-gov" role="tabpanel">
+            <div class="audience-panel">
+              <p>Our licence, governance, plans and published performance.</p>
+              <ul>
+                <li><a href="../pages/ownership.html">Our new ownership</a></li>
+                <li><a href="../pages/programmes.html">What we're working on</a></li>
+                <li><a href="#">Business and Development Plan</a></li>
+                <li><a href="../pages/documents.html">Annual reports and compliance</a></li>
+                <li><a href="#">Price control</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="tab-panel" id="aud-jobs" role="tabpanel">
+            <div class="audience-panel">
+              <p>Roles in London and Manchester, and what it's like to work here.</p>
+              <ul>
+                <li><a href="#">Current vacancies</a></li>
+                <li><a href="#">Life at DCC</a></li>
+                <li><a href="#">Early careers</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <p class="wf-note" data-note="2"><span class="wf-note-label">Behaviour</span>Tabs are buttons, so they work from the keyboard, and the page opens on the first one each time. Each panel is edited in the CMS as a short line and up to six links. On mobile the tabs wrap onto two lines rather than scrolling sideways.</p>
+      <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>Do we have any data on how many visitors are members of the public? If it's large, the public tab could come first.</p>
+
+      <!-- This week at DCC (R13) -->
+      <section class="sp" aria-labelledby="week-title">
+        <h2 class="section-title" id="week-title">This week at DCC</h2>
+        <div class="week-strip">
+          <div class="week-col"><h3>Consultations closing soonest</h3><ul id="week-consultations"></ul><p style="margin-top:0.75rem"><a href="../pages/consultations.html">All consultations</a></p></div>
+          <div class="week-col"><h3>New documents</h3><ul id="week-docs"></ul><p style="margin-top:0.75rem"><a href="../pages/documents.html">Document Centre</a></p></div>
+          <div class="week-col"><h3>Coming up</h3><ul id="week-events"></ul><p style="margin-top:0.75rem"><a href="../pages/events.html">Forums and events</a></p></div>
+        </div>
+        <p class="wf-note" data-note="4"><span class="wf-note-label">Content</span>Fills itself: the three open consultations closing soonest, the three newest documents and the next three events. Nothing to update by hand.</p>
+      </section>
+
+      <!-- Live numbers (R14) -->
+      <section class="meter-band" aria-labelledby="meter-title">
+        <p class="wf-meta" style="text-align:center;margin:0">Connecting Britain</p>
+        <h2 id="meter-title">One smart meter at a time</h2>
+        <div class="meter-grid">
+          <div>
+            <div class="meter" data-meter="meters"></div>
+            <p class="meter-caption">Smart meters on the DCC network</p>
+            <p class="wf-meta">Last updated <span data-stat="updated"></span> · live</p>
+          </div>
+          <div>
+            <svg class="dial" viewBox="0 0 160 90" data-dial="co2" data-max="1500000" aria-hidden="true"></svg>
+            <p class="meter-caption"><span data-stat="co2"></span> tonnes of CO₂ saved in the past year</p>
+            <p class="wf-meta">Last updated <span data-stat="updated"></span> · live</p>
+          </div>
+        </div>
+        <p style="text-align:center;margin-top:1rem"><a class="btn btn-secondary" href="../pages/performance.html">Statistics and performance</a></p>
+      </section>
+      <p class="wf-note" data-note="5"><span class="wf-note-label">Accessibility</span>The digits are drawn as now, but screen readers hear "38,965,999" rather than "0 1 2 3 4 5 6 7 8 9" eight times over. The CO₂ figure, which is currently only a needle on a dial, is printed in full.</p>
+
+      <!-- Ownership callout (R15) -->
+      <section class="sp split" aria-labelledby="own-title">
+        <div class="wf-placeholder ratio-16-9">Image</div>
+        <div>
+          <p class="wf-meta" style="margin-bottom:0.25rem">About DCC</p>
+          <h2 id="own-title">A not-for-profit DCC, from November</h2>
+          <p>Ofgem has awarded the next Smart Meter Communication Licence to DCC2, part of the Smart Energy Code Company. The business transfers from Capita in November 2026. Here's what changes and what doesn't.</p>
+          <a class="btn" href="../pages/ownership.html">Our new ownership</a>
+        </div>
+      </section>
+
+      <!-- Existing homepage sections, unchanged -->
+      <section class="sp grid grid-2" aria-label="Existing homepage sections">
+        <div class="card"><div class="wf-placeholder ratio-16-9">Image</div><p class="wf-meta">Enabling Innovation</p><h3 class="card-title">Helping turn your vision into reality</h3><p class="card-text">Test labs, DCC Boxed and support for new products, as now.</p><a href="#">Discover more</a></div>
+        <div class="card"><div class="wf-placeholder ratio-16-9">Image</div><p class="wf-meta">Careers</p><h3 class="card-title">Shape the future of energy</h3><p class="card-text">As now.</p><a href="#">Join our team</a></div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces Smart DCC's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Prototypes for discussion · Figures marked live are from smartdcc.co.uk on 28 September 2026; everything else is sample data</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+</body>
+</html>

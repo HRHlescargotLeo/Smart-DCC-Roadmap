@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search — Smart DCC prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces Smart DCC's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="Smart DCC prototypes, overview">Smart DCC <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/home.html" data-proto="home ownership public"><span class="n">1</span> Front door</a></li>
+          <li><a href="../pages/consultations.html" data-proto="consultations consultation events"><span class="n">2</span> Consultations</a></li>
+          <li><a href="../pages/search.html" data-proto="search documents glossary"><span class="n">3</span> Find anything</a></li>
+          <li><a href="../pages/status.html" data-proto="status performance programmes"><span class="n">4</span> Status and performance</a></li>
+          <li><a href="../pages/join.html" data-proto="join partner-enquiry"><span class="n">5</span> Joining the network</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+    <!-- Sub-pages of prototype 3 -->
+    <nav class="proto-sub" aria-label="Pages in this prototype"><div class="container"><a href="../pages/search.html" data-sub="search">Site search</a><a href="../pages/documents.html" data-sub="documents">Document Centre</a><a href="../pages/glossary.html" data-sub="glossary">Glossary</a></div></nav>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 3 of 5 · Find anything</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>A site search that understands the words people actually type, puts pages ahead of the 1,494 documents when the question is a plain one, answers acronyms with a definition, and sends members of the public to the help that fits them. Duplicates go, and archived items only appear when asked for.</p></div>
+          <div><h2>Why</h2><p>Search is where people go when the navigation fails them, and on the live site it often fails them too. "My smart meter is not working" returns no results. "Onboarding" returns a redacted consultancy contract first, and a 2020 article about starting a job in lockdown appears twice. The index holds 2,152 items, which is plenty to find something useful if the ranking lets it.</p></div>
+        </div>
+        <p class="proposal-foot">The index here holds the pages in this pack, 35 documents, the consultations and a few news items. Ranking and synonyms are a working sketch of the rules we'd propose, not a finished search engine.</p>
+      </div>
+    </aside>
+
+    <div class="band">
+      <div class="container">
+        <h1>Search</h1>
+        <form id="q-form" class="search-big" role="search">
+          <label for="q" class="visually-hidden">Search the site</label>
+          <input type="search" id="q" placeholder="Ask a question or search for a document" autocomplete="off">
+          <button type="submit" class="btn">Search</button>
+        </form>
+        <div class="row" style="gap:0.5rem;flex-wrap:wrap;margin-top:0.75rem;font-size:0.875rem">
+          <span class="wf-meta">Try:</span>
+          <button type="button" class="chip" data-try="my smart meter is not working">my smart meter is not working</button>
+          <button type="button" class="chip" data-try="onboarding">onboarding</button>
+          <button type="button" class="chip" data-try="DUIS">DUIS</button>
+          <button type="button" class="chip" data-try="charges">charges</button>
+          <button type="button" class="chip" data-try="half hourly">half hourly</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:1.5rem">
+      <div class="type-tabs" role="group" aria-label="Type of result">
+        <button type="button" data-kind="All" aria-pressed="true">All <span class="n"></span></button>
+        <button type="button" data-kind="Page" aria-pressed="false">Pages <span class="n"></span></button>
+        <button type="button" data-kind="Document" aria-pressed="false">Documents <span class="n"></span></button>
+        <button type="button" data-kind="Consultation" aria-pressed="false">Consultations <span class="n"></span></button>
+        <button type="button" data-kind="News" aria-pressed="false">News <span class="n"></span></button>
+      </div>
+      <div class="row between" style="flex-wrap:wrap;gap:0.75rem;margin-bottom:0.75rem">
+        <p class="result-count" id="q-count" aria-live="polite" style="margin:0"></p>
+        <label class="check"><input type="checkbox" id="q-archived"> Include archived and superseded items</label>
+      </div>
+      <p class="did-you-mean" id="q-note"></p>
+      <div class="best-bet" id="best-bet" hidden></div>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>A best bet appears above the results for two kinds of search: an acronym or term in the glossary, which gets its definition, and a question about someone's own meter, bill or display, which gets the public help page. Editors can pin other best bets in the CMS.</p>
+      <ul class="rows" id="results"></ul>
+      <p class="wf-note" data-note="2"><span class="wf-note-label">Ranking</span>Title matches count most, pages rank above documents for the same match, archived items rank lowest and are hidden by default, and the same item never appears twice. Common words such as "my", "is" and "the" are ignored. Words people use ("charges", "join", "broken") are matched to the words the site uses ("charging", "onboarding", "public").</p>
+      <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>What does the current search run on? If it's Umbraco's built-in Examine index, most of this is configuration rather than a rebuild.</p>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces Smart DCC's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Prototypes for discussion · Figures marked live are from smartdcc.co.uk on 28 September 2026; everything else is sample data</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+</body>
+</html>

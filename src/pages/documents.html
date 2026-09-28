@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document Centre — Smart DCC prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+  <!-- @@include subnav-3.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 3 of 5 · Document Centre</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>A Document Centre you can narrow down: filters for category, regulatory year, programme and file type that can be combined, a count of what's left, a clear "current" badge, earlier versions tucked under each document, and superseded documents hidden unless asked for.</p></div>
+          <div><h2>Why</h2><p>There are 1,494 documents across 166 pages. The only way to narrow them is a single category dropdown and an archive checkbox, so finding last year's charging statement means paging back through everything published since. Some documents show "Version: 2" and most show nothing, which leaves the reader to guess whether they have the latest.</p></div>
+        </div>
+        <p class="proposal-foot">The first nine documents are the live first page. The rest are sample entries using real categories and naming. Ten per page here so the paging shows; we'd suggest 25 on the live site.</p>
+      </div>
+    </aside>
+
+    <div class="band">
+      <div class="container">
+        <h1>Document Centre</h1>
+        <p class="lead">Reports, plans, charging statements, technical guides and contracts.</p>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:1.5rem">
+      <div class="listing">
+        <!-- Facets (R31) -->
+        <aside class="facets" aria-label="Filter documents">
+          <div class="field" style="margin:0"><label for="doc-q">Search within documents</label><input type="search" id="doc-q" placeholder="Title or keyword"></div>
+          <fieldset><legend>Category</legend><div id="f-cat"></div></fieldset>
+          <fieldset><legend>Regulatory year</legend><div id="f-ry"></div></fieldset>
+          <div class="field" style="margin:0"><label for="f-prog">Programme</label><select id="f-prog"></select></div>
+          <fieldset><legend>File type</legend><div id="f-type"></div></fieldset>
+          <label class="check"><input type="checkbox" id="f-old"> Show superseded versions</label>
+          <button type="button" class="btn btn-secondary btn-sm" id="clear-filters">Clear all filters</button>
+        </aside>
+
+        <section aria-labelledby="doc-count">
+          <div class="list-toolbar">
+            <button type="button" class="btn btn-secondary filter-btn-mobile" id="facet-btn" aria-expanded="false">Filters<span id="facet-btn-count"></span></button>
+            <p class="result-count" id="doc-count" aria-live="polite" style="margin:0;flex:1"></p>
+            <div class="field"><label for="doc-sort">Sort by</label><select id="doc-sort"><option value="latest">Latest</option><option value="oldest">Oldest</option><option value="az">A to Z</option></select></div>
+          </div>
+          <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Filters apply as soon as they're ticked and can be combined. Counts beside each option show current documents. On a phone the filters sit behind a single button, so the first document is on the first screen rather than below the search, dropdowns and archive checkbox as it is now.</p>
+          <ul class="rows" id="doc-list"></ul>
+          <nav class="pager" id="doc-pager" aria-label="Pages of documents"></nav>
+          <p class="wf-note" data-note="2"><span class="wf-note-label">Versions</span>Each document is one record with a version history, so publishing version 3 replaces version 2 in the list and moves it underneath. Try "Information Security Policy".</p>
+          <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>Regulatory year and programme aren't tagged on documents today. Tagging 1,494 documents is a real piece of work; we'd suggest tagging everything from RY 2024/25 onward and leaving older ones to category and date.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service status — Smart DCC prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+  <!-- @@include subnav-4.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 4 of 5 · Service status</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>A public status page: each service with its current state, open incidents with timed updates, resolved incidents for the last 90 days, and planned maintenance that can be filtered by service and added to a calendar. The monthly Category 1 PDFs stay as the formal record.</p></div>
+          <div><h2>Why</h2><p>Today, incidents are published after the event as one PDF per month (August 2026: no Category 1 incidents, which is good news delivered in a 158 KB file). Planned maintenance is a 528 KB annual PDF on the Customer Engagement page. Customers already get live incident information through the Self-Service Interface, so the question is less whether this information exists than whether a public version helps. We think it does, for smaller customers and for anyone trying to answer "is it us or the network?"</p></div>
+        </div>
+        <p class="proposal-foot">Service names are real. Their states, the incidents and the maintenance windows are sample data.</p>
+      </div>
+    </aside>
+
+    <div class="band">
+      <div class="container">
+        <h1>Service status</h1>
+        <p class="lead">The current state of DCC services, incidents we're working on and planned maintenance.</p>
+        <div class="row" style="gap:0.75rem;flex-wrap:wrap"><button type="button" class="btn btn-secondary" data-modal-open="st-alert-modal">Get status alerts</button><a class="btn btn-secondary" href="#">Report an incident (Self-Service Interface)</a></div>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:1.5rem">
+      <div class="status-summary" role="status"><span class="big" id="status-big"></span><span class="wf-meta">Updated 28 September 2026, 09:20 · Sample</span></div>
+
+      <div class="two-col" style="margin-top:1.5rem">
+        <div>
+          <section aria-labelledby="open-title">
+            <h2 class="section-title" id="open-title">Open incidents</h2>
+            <div id="inc-open"></div>
+            <p class="wf-note" data-note="1"><span class="wf-note-label">Content</span>Updates are posted by the Technical Operations Centre from the same tool they use for the Self-Service Interface, so the public page never needs a separate edit. Detail that only SEC Parties should see stays in the Self-Service Interface.</p>
+          </section>
+
+          <section class="sp" aria-labelledby="mt-title">
+            <div class="row between" style="flex-wrap:wrap;gap:1rem;align-items:end">
+              <h2 class="section-title" id="mt-title" style="margin:0">Planned maintenance</h2>
+              <div class="field" style="margin:0"><label for="mt-svc">Service</label><select id="mt-svc"></select></div>
+            </div>
+            <div class="table-wrap" style="margin-top:1rem">
+              <table class="data-table">
+                <thead><tr><th>Date</th><th>Time</th><th>Service</th><th>Impact</th><th><span class="visually-hidden">Calendar</span></th></tr></thead>
+                <tbody id="mt-body"></tbody>
+              </table>
+            </div>
+            <p class="wf-meta" style="margin-top:0.75rem">The full year is in the <a href="~/pages/documents.html">Annual Outage Plan 2026/27</a>.</p>
+          </section>
+
+          <section class="sp" aria-labelledby="past-title">
+            <div class="row between" style="flex-wrap:wrap;gap:1rem;align-items:end">
+              <h2 class="section-title" id="past-title" style="margin:0">Resolved in the last 90 days</h2>
+              <div class="field" style="margin:0"><label for="inc-cat">Category</label><select id="inc-cat"><option value="all">All categories</option><option>Category 1</option><option>Category 2</option></select></div>
+            </div>
+            <div id="inc-past" style="margin-top:1rem"></div>
+            <p class="wf-meta" style="margin-top:1rem">Monthly Category 1 summaries: <a href="#">August 2026</a> · <a href="#">July 2026</a> · <a href="#">June 2026</a> · <a href="#">All months</a></p>
+          </section>
+        </div>
+
+        <aside>
+          <h2 class="section-title">Services</h2>
+          <ul class="svc-list" id="svc-list"></ul>
+          <p class="wf-note" data-note="2"><span class="wf-note-label">Behaviour</span>States are shown by shape as well as words (filled, half-filled, dashed), so they survive greyscale printing and colour blindness when colour is added.</p>
+          <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>Which services would DCC be comfortable showing publicly, and at what level of detail? Regional WAN status may be sensitive.</p>
+        </aside>
+      </div>
+    </div>
+
+    <div class="wf-modal" id="st-alert-modal" role="dialog" aria-modal="true" aria-labelledby="st-alert-title">
+      <div class="wf-modal-panel">
+        <button type="button" class="wf-modal-close" aria-label="Close">&times;</button>
+        <form class="alert-form" data-done="st-alert-done" novalidate>
+          <h2 id="st-alert-title" style="font-size:1.375rem">Status alerts by email</h2>
+          <fieldset style="margin-bottom:1rem">
+            <legend>Tell me about</legend>
+            <label class="check"><input type="checkbox" value="New incidents" id="sa-1" checked> New incidents and updates</label>
+            <label class="check"><input type="checkbox" value="Planned maintenance" id="sa-2" checked> Planned maintenance, a week ahead</label>
+            <p class="field-error" data-topic-error hidden>Choose at least one</p>
+          </fieldset>
+          <div class="field"><label for="sa-email">Work email address</label><input type="email" id="sa-email" required autocomplete="email"><p class="field-error" hidden>Enter an email address like name@example.com</p></div>
+          <button type="submit" class="btn">Sign up</button>
+        </form>
+        <div id="st-alert-done" hidden>
+          <h2 style="font-size:1.375rem">Check your email</h2>
+          <p>We've sent a link to confirm your alerts for: <strong data-topics></strong>.</p>
+          <button type="button" class="btn wf-modal-close">Done</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>

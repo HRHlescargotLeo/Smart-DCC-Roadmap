@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Network performance — Smart DCC prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+  <!-- @@include subnav-4.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 4 of 5 · Network performance</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>The same four performance measures and the same headline statistics, drawn from data rather than pasted in as pictures. Every chart can be read month by month, switched to a table and downloaded as a CSV, and the whole set downloads in one file.</p></div>
+          <div><h2>Why</h2><p>The four charts on the Performance page are PNG images. Their alt text names each chart but gives no values, so a screen reader user learns that a chart exists and nothing else. Nobody can reuse the figures without retyping them. The mobile and desktop versions are separate images, and they don't quite agree: October's top-up figure is 97.4% in one and 97.5% in the other.</p></div>
+        </div>
+        <p class="proposal-foot">All figures on this page are live, read from smartdcc.co.uk on 28 September 2026.</p>
+      </div>
+    </aside>
+
+    <div class="band">
+      <div class="container">
+        <h1>Smart meter statistics and network performance</h1>
+        <p class="lead">How many meters are connected, and how well the network performs month by month.</p>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:1.5rem">
+      <!-- Headline statistics (R42) -->
+      <section aria-labelledby="stats-title">
+        <h2 class="section-title" id="stats-title">The network today</h2>
+        <div class="stat-row">
+          <div><b data-stat="meters"></b><span>Smart meters connected</span></div>
+          <div><b data-stat="smets2"></b><span>Second-generation (SMETS2)</span></div>
+          <div><b data-stat="smets1"></b><span>First-generation (SMETS1)</span></div>
+          <div><b data-stat="premises"></b><span>Homes and small businesses</span></div>
+          <div><b data-stat="devices"></b><span>Connected devices</span></div>
+          <div><b data-stat="messagesMonthly"></b><span>Messages a month</span></div>
+          <div><b data-stat="dailyRate"></b><span>Average weekday SMETS2 connections</span></div>
+          <div><b data-stat="co2"></b><span>Tonnes of CO₂ saved in the past year</span></div>
+        </div>
+        <p class="wf-meta" style="margin-top:0.5rem">Last updated <span data-stat="updated"></span>. Monthly figures updated 31.08.2026.</p>
+        <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The numbers are in the page as text from the start. On the live page they're filled in by script as each card scrolls into view, so previews, search engines and some screen readers see zeros.</p>
+      </section>
+
+      <!-- Charts (R43, R44) -->
+      <section class="sp" aria-labelledby="perf-title">
+        <div class="row between" style="flex-wrap:wrap;gap:1rem;align-items:end;margin-bottom:1rem">
+          <h2 class="section-title" id="perf-title" style="margin:0">Network performance, August 2025 to July 2026</h2>
+          <div class="row" style="gap:0.5rem;flex-wrap:wrap">
+            <div class="seg" role="group" aria-label="Period"><button type="button" data-range="6" aria-pressed="false">6 months</button><button type="button" data-range="12" aria-pressed="true">12 months</button></div>
+            <button type="button" class="btn btn-secondary btn-sm" id="csv-all">Download all as CSV</button>
+          </div>
+        </div>
+        <div class="chart-grid" id="charts"></div>
+        <p class="wf-note" data-note="2"><span class="wf-note-label">Behaviour</span>Hover over or tab to a month to read its value against the average. Each chart has a table view and its own CSV. The scale runs from 80% to 100%, as on the live charts.</p>
+        <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>Could these series be published as open data, with the history going back further than twelve months? Twelve months is what the live page shows.</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>

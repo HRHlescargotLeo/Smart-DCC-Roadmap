@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What we're working on — Smart DCC prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+  <!-- @@include subnav-4.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 4 of 5 · What we're working on</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>One card per programme with its stage, status and next milestone, linked to its documents and consultations. Below it, a scorecard against the four strategic outcomes in the Business and Development Plan, ready for the strategy and technology roadmap the new licence asks DCC2 to publish.</p></div>
+          <div><h2>Why</h2><p>The page promises "estimated delivery dates" and then groups programmes by year as a plain list, so the only thing a reader learns about MHHS is that it finishes in 2026. The documents panel links the 2024/25 Business and Development Plan. SECCo's 2026 survey, of much the same audience, found people wanted more visibility of progress against strategy, and DCC2 will have to publish a roadmap anyway.</p></div>
+        </div>
+        <p class="proposal-foot">Programme names and target years are live. Stages, milestones, progress and scorecard measures are sample.</p>
+      </div>
+    </aside>
+
+    <div class="band">
+      <div class="container">
+        <h1>What we're working on</h1>
+        <p class="lead">The programmes changing the network, where each one is up to and what happens next.</p>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:1.5rem">
+      <section aria-labelledby="prog-title">
+        <h2 class="visually-hidden" id="prog-title">Programmes</h2>
+        <div class="row between" style="flex-wrap:wrap;gap:1rem;margin-bottom:1rem">
+          <div class="row" role="group" aria-label="Show" style="gap:0.5rem;flex-wrap:wrap">
+            <button type="button" class="chip" data-pstate="live" aria-pressed="true">In progress</button>
+            <button type="button" class="chip" data-pstate="at-risk" aria-pressed="false">At risk</button>
+            <button type="button" class="chip" data-pstate="complete" aria-pressed="false">Complete</button>
+            <button type="button" class="chip" data-pstate="all" aria-pressed="false">All</button>
+          </div>
+          <p class="result-count" id="prog-count" style="margin:0" aria-live="polite"></p>
+        </div>
+        <div class="prog-grid" id="prog-grid"></div>
+        <p class="wf-note" data-note="1"><span class="wf-note-label">Content</span>Each programme owner updates stage, status and next milestone monthly in the CMS. A card that hasn't been updated for 60 days is flagged to the web team.</p>
+        <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Would DCC publish "at risk" status publicly? It's the most useful thing on the page for customers and the hardest to agree internally.</p>
+      </section>
+
+      <!-- Strategy scorecard (R46) -->
+      <section class="sp" aria-labelledby="score-title">
+        <h2 class="section-title" id="score-title">How we're doing against our strategy</h2>
+        <p>Our Business and Development Plan sets four strategic outcomes. These are the measures we report against each, updated every quarter.</p>
+        <div class="score">
+          <div><h3>Secure and stable</h3><ul><li><span>Network availability</span><b>99.5%</b></li><li><span>Category 1 incidents this year</span><b>[n]</b></li></ul><a href="~/pages/performance.html">Performance data</a></div>
+          <div><h3>Right first time</h3><ul><li><span>Successful service requests</span><b>94.0%</b></li><li><span>Releases delivered on time</span><b>[n of n]</b></li></ul></div>
+          <div><h3>A responsible and efficient business</h3><ul><li><span>Cost efficiencies, RY 2025/26</span><b>£36.2m</b></li><li><span>Against a commitment of</span><b>£30m</b></li></ul></div>
+          <div><h3>Flexible and fast</h3><ul><li><span>Average onboarding time</span><b>[n months]</b></li><li><span>4G Communications Hubs connected</span><b>1m+</b></li></ul></div>
+        </div>
+        <p class="wf-note" data-note="3"><span class="wf-note-label">Content</span>Availability and request figures are the 12-month averages from the Performance page. The efficiency figure is from DCC's news about RY 2025/26. Measures in brackets would need DCC to supply them.</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>

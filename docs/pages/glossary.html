@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossary — Smart DCC prototype</title>
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Prototype navigator (replaces Smart DCC's own header, R01) -->
+  <header class="sticky site-header proto-nav">
+    <div class="container proto-nav-row">
+      <a class="proto-home" href="../index.html" aria-label="Smart DCC prototypes, overview">Smart DCC <span>prototypes</span></a>
+      <nav aria-label="Prototypes">
+        <ul class="proto-links">
+          <li><a href="../index.html" data-proto="index">Overview</a></li>
+          <li><a href="../pages/home.html" data-proto="home ownership public"><span class="n">1</span> Front door</a></li>
+          <li><a href="../pages/consultations.html" data-proto="consultations consultation events"><span class="n">2</span> Consultations</a></li>
+          <li><a href="../pages/search.html" data-proto="search documents glossary"><span class="n">3</span> Find anything</a></li>
+          <li><a href="../pages/status.html" data-proto="status performance programmes"><span class="n">4</span> Status and performance</a></li>
+          <li><a href="../pages/join.html" data-proto="join partner-enquiry"><span class="n">5</span> Joining the network</a></li>
+        </ul>
+      </nav>
+      <button type="button" class="notes-toggle" role="switch" aria-checked="false" data-notes-toggle>
+        <span class="notes-track" aria-hidden="true"><span class="notes-thumb"></span></span>
+        <span class="notes-label">Notes off</span>
+      </button>
+    </div>
+  </header>
+
+    <!-- Sub-pages of prototype 3 -->
+    <nav class="proto-sub" aria-label="Pages in this prototype"><div class="container"><a href="../pages/search.html" data-sub="search">Site search</a><a href="../pages/documents.html" data-sub="documents">Document Centre</a><a href="../pages/glossary.html" data-sub="glossary">Glossary</a></div></nav>
+
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 3 of 5 · Glossary</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>The glossary as a web page, searchable and linked from the header, with each term addressable so any page can link to it. Where a term appears in running text, it can show its definition in place, without leaving the page.</p></div>
+          <div><h2>Why</h2><p>The six onboarding steps on Partner with DCC use DUIS, SMKI, SREPT, RAPP and UEPT, and spell out some of them. The DCC glossary exists, but as a 145 KB PDF linked from What we're working on. A new entrant reading the onboarding steps would need both open side by side.</p></div>
+        </div>
+        <p class="proposal-foot">Definitions are our own drafts for this prototype and need checking by DCC. Try it in a sentence: new entrants need a <button type="button" class="term" data-term="DCC Gateway Connection">DCC Gateway Connection</button> and a <button type="button" class="term" data-term="DUIS">DUIS</button> interface.</p>
+      </div>
+    </aside>
+
+    <div class="band">
+      <div class="container">
+        <h1>Glossary</h1>
+        <p class="lead">Plain definitions of the terms and acronyms used across this site.</p>
+        <div class="field" style="max-width:480px;margin:0"><label for="gloss-q">Find a term</label><input type="search" id="gloss-q" placeholder="For example: SMKI, hub, settlement"></div>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:1rem">
+      <p class="result-count" id="gloss-count" aria-live="polite"></p>
+      <nav class="az" id="az" aria-label="Jump to letter"></nav>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Typing filters the list and greys out letters with no terms. Every term has its own address, such as glossary.html#term-duis, so a search result or a definition pop-up can link straight to it.</p>
+      <div id="gloss"></div>
+    </div>
+  </main>
+
+  <!-- Prototype pager (replaces Smart DCC's own footer) -->
+  <footer class="proto-footer">
+    <div class="container">
+      <nav class="proto-pager" aria-label="Previous and next prototype" data-proto-pager></nav>
+      <p class="wf-meta">Prepared by ClerksWell · Prototypes for discussion · Figures marked live are from smartdcc.co.uk on 28 September 2026; everything else is sample data</p>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/wireframe.js"></script>
+</body>
+</html>

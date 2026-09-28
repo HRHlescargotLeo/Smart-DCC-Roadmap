@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joining the network — Smart DCC prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+  <!-- @@include subnav-5.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 5 of 5 · Joining the network</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>Start by asking what kind of organisation you are, then show that route in full: every step on one page, who you deal with, typical timescales, the terms explained where they appear, and the digital onboarding tool for the organisations it serves. Innovators who only want to test a product are told so early, rather than working through six steps they don't need.</p></div>
+          <div><h2>Why</h2><p>Partner with DCC shows six onboarding steps in a carousel, one at a time, the same for every kind of organisation, with four of them linking to "here". DCC has since launched a digital onboarding tool for Other Users, the largest group in the pipeline according to its own announcement, and the partner page doesn't mention it. SECCo's survey also asked for better onboarding support, which suggests the problem isn't only on DCC's side.</p></div>
+        </div>
+        <p class="proposal-foot">The six steps are live. Timescales are sample figures for DCC to replace. Customer quotes are left as placeholders pointing at the existing testimonials.</p>
+      </div>
+    </aside>
+
+    <div class="band">
+      <div class="container">
+        <h1>Joining the network</h1>
+        <p class="lead">What it takes to use the smart metering network depends on who you are. Tell us, and we'll show you your route.</p>
+      </div>
+    </div>
+
+    <div class="container" id="join-app" style="padding-top:1.5rem">
+      <!-- Pathfinder (R50) -->
+      <section aria-labelledby="role-title">
+        <h2 class="section-title" id="role-title">What kind of organisation are you?</h2>
+        <div class="role-cards" role="radiogroup" aria-labelledby="role-title">
+          <label><input type="radio" name="role" value="supplier" id="role-supplier"> Energy supplier</label>
+          <label><input type="radio" name="role" value="network" id="role-network"> Network operator (DNO or iDNO)</label>
+          <label><input type="radio" name="role" value="other" id="role-other"> Energy services or data company</label>
+          <label><input type="radio" name="role" value="innovator" id="role-innovator"> Innovator or manufacturer testing a product</label>
+          <label><input type="radio" name="role" value="research" id="role-research"> University or research body</label>
+        </div>
+        <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The choice and any steps ticked off are remembered for the visit, so someone can come back to their route. Links from elsewhere can open a route directly, for example join.html?type=other.</p>
+      </section>
+
+      <!-- Route (R51, R52) -->
+      <section class="sp" id="route" hidden aria-labelledby="route-title">
+        <div class="route-head">
+          <div>
+            <p class="wf-meta" style="margin-bottom:0.25rem">Your route as: <strong id="route-role"></strong></p>
+            <h2 id="route-title" style="margin:0"></h2>
+            <p id="route-intro" style="margin:0.5rem 0 0;max-width:65ch"></p>
+          </div>
+          <dl class="kv panel surface" style="min-width:220px"><dt>Typical time overall</dt><dd><span id="route-time"></span> <span class="wf-meta">(sample)</span></dd><dt>Progress</dt><dd id="route-progress"></dd></dl>
+        </div>
+
+        <div class="tool-callout" id="route-tool" hidden style="margin-top:1.5rem">
+          <div><strong>Apply through the digital onboarding tool</strong><p style="margin:0.25rem 0 0" class="wf-meta">It takes you through these steps in the right order, checks your forms as you go and shows where your application is up to.</p></div>
+          <a class="btn" href="#">Start your application</a>
+        </div>
+
+        <ol class="steps" id="route-steps" style="margin-top:1.75rem"></ol>
+        <p class="wf-note" data-note="2"><span class="wf-note-label">Glossary</span>Dotted terms show their definition in place. Try SEC or DUIS in the steps above.</p>
+
+        <div class="split" style="margin-top:1rem">
+          <blockquote class="quote-ph" id="route-quote"></blockquote>
+          <div class="panel surface">
+            <h3 style="font-size:1.125rem">Talk to the onboarding team</h3>
+            <p class="wf-meta">Tell us a little about your organisation and we'll get back to you within five working days. [Sample]</p>
+            <a class="btn" id="route-enquire" href="~/pages/partner-enquiry.html">Get in touch</a>
+          </div>
+        </div>
+        <p class="wf-note query" data-note="3"><span class="wf-note-label">Open question</span>Can DCC publish typical timescales for each step? Even a range would help new entrants plan, and it's the question most onboarding pages leave unanswered.</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>

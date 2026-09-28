@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forums and events — Smart DCC prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+  <!-- @@include subnav-2.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 2 of 5 · Forums and events</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>A calendar of the forums, webinars and test events customers can attend, with who each one is for, a register button and an "add to calendar" file.</p></div>
+          <div><h2>Why</h2><p>Customer Engagement describes six ways to engage, from the Operations Forum to the Design Release Forum, without a single date. News &amp; Events offers a filter for past events and none for upcoming ones. The forums clearly happen; the website just doesn't say when.</p></div>
+        </div>
+        <p class="proposal-foot">Forum names are live. Dates, the briefing and the transition webinar are sample.</p>
+      </div>
+    </aside>
+
+    <div class="band">
+      <div class="container">
+        <h1>Forums and events</h1>
+        <p class="lead">Regular forums for our customers, plus briefings and test events. Most are online.</p>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:1.5rem">
+      <div class="two-col">
+        <section aria-labelledby="ev-title">
+          <h2 class="visually-hidden" id="ev-title">Upcoming</h2>
+          <div class="row" role="group" aria-label="Type of event" style="gap:0.5rem;flex-wrap:wrap;margin-bottom:1.25rem">
+            <button type="button" class="chip" data-etype="all" aria-pressed="true">All</button>
+            <button type="button" class="chip" data-etype="Forum" aria-pressed="false">Forums</button>
+            <button type="button" class="chip" data-etype="Webinar" aria-pressed="false">Webinars</button>
+            <button type="button" class="chip" data-etype="Test event" aria-pressed="false">Test events</button>
+          </div>
+          <ul class="cal" id="event-list"></ul>
+          <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>"Add to calendar" downloads a calendar file that opens in Outlook. "Register" would go to the event's booking form; here it just confirms.</p>
+        </section>
+        <aside class="panel surface">
+          <h2 style="font-size:1.125rem">Regular forums</h2>
+          <dl class="kv">
+            <dt>Operations Forum</dt><dd>Monthly</dd>
+            <dt>Design Release Forum</dt><dd>Monthly</dd>
+            <dt>Quarterly Finance Forum</dt><dd>Quarterly</dd>
+            <dt>SEC Panel and sub-committees</dt><dd>Run by SECCo</dd>
+          </dl>
+          <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>How often does each forum meet, and are the joining details public or sent only to registered contacts?</p>
+          <button type="button" class="btn btn-secondary" data-modal-open="ev-alert-modal" style="margin-top:0.5rem">Email me new events</button>
+        </aside>
+      </div>
+    </div>
+
+    <div class="wf-modal" id="ev-alert-modal" role="dialog" aria-modal="true" aria-labelledby="ev-alert-title">
+      <div class="wf-modal-panel">
+        <button type="button" class="wf-modal-close" aria-label="Close">&times;</button>
+        <form class="alert-form" data-done="ev-alert-done" novalidate>
+          <h2 id="ev-alert-title" style="font-size:1.375rem">Email me new events</h2>
+          <fieldset style="margin-bottom:1rem">
+            <legend>Which events?</legend>
+            <label class="check"><input type="checkbox" value="Forums" id="ea-1" checked> Forums</label>
+            <label class="check"><input type="checkbox" value="Webinars" id="ea-2" checked> Webinars</label>
+            <label class="check"><input type="checkbox" value="Test events" id="ea-3"> Test events</label>
+            <p class="field-error" data-topic-error hidden>Choose at least one</p>
+          </fieldset>
+          <div class="field"><label for="ea-email">Work email address</label><input type="email" id="ea-email" required autocomplete="email"><p class="field-error" hidden>Enter an email address like name@example.com</p></div>
+          <button type="submit" class="btn">Sign up</button>
+        </form>
+        <div id="ev-alert-done" hidden>
+          <h2 style="font-size:1.375rem">Check your email</h2>
+          <p>We've sent a link to confirm your alerts for: <strong data-topics></strong>.</p>
+          <button type="button" class="btn wf-modal-close">Done</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>

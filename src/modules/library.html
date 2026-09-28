@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module library — Smart DCC prototypes</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+
+  <main id="main">
+    <div class="container">
+      <h1 style="margin-top:2rem">Module library</h1>
+      <p class="lead">The new components used across the five prototypes, each shown once with the requirement it meets. Existing Smart DCC components (cards, accordions, buttons) are in the design system.</p>
+
+      <!-- Site-wide notice (R11) -->
+      <section class="sp">
+        <h2 class="section-title">Site-wide notice <span class="wf-meta">R11</span></h2>
+        <div class="notice-bar" style="border:1px solid var(--wf-border)"><div class="container"><p><strong>DCC is moving to new ownership in November 2026.</strong> Our services, contracts and contacts stay the same. <a href="~/pages/ownership.html">What's changing</a></p><button type="button" class="notice-close">Hide this</button></div></div>
+      </section>
+
+      <!-- Status chips (R21) -->
+      <section class="sp">
+        <h2 class="section-title">Status chips <span class="wf-meta">R21, R41, R45</span></h2>
+        <div class="row" style="gap:0.75rem;flex-wrap:wrap;align-items:center">
+          <span class="status open">Open</span> <span class="days-left soon">Closes in 4 days</span>
+          <span class="status upcoming">Upcoming</span>
+          <span class="status response">DCC response</span>
+          <span class="status closed">Closed</span>
+          <span class="badge-current">Current · v2</span>
+          <span class="badge-old">Superseded</span>
+          <span class="state on-track">On track</span>
+          <span class="state at-risk">At risk</span>
+          <span class="state complete">Complete</span>
+          <span class="svc-state ok">Operating normally</span>
+          <span class="svc-state degraded">Degraded</span>
+          <span class="svc-state maintenance">Planned maintenance</span>
+        </div>
+      </section>
+
+      <!-- Live number (R14) -->
+      <section class="sp">
+        <h2 class="section-title">Accessible meter counter <span class="wf-meta">R14</span></h2>
+        <div class="meter-band"><div class="meter-grid"><div><div class="meter" data-meter="meters"></div><p class="meter-caption">Smart meters on the DCC network</p></div><div><svg class="dial" viewBox="0 0 160 90" data-dial="co2" data-max="1500000" aria-hidden="true"></svg><p class="meter-caption"><span data-stat="co2"></span> tonnes of CO₂ saved</p></div></div></div>
+      </section>
+
+      <!-- Lifecycle strip (R24) -->
+      <section class="sp">
+        <h2 class="section-title">Consultation lifecycle <span class="wf-meta">R24</span></h2>
+        <ol class="lifecycle"><li class="done"><b>Open</b>18 Sep 2026</li><li class="now"><b>Closes</b>30 Oct 2026</li><li><b>Responses published</b>After it closes</li><li><b>DCC conclusions</b>To follow</li></ol>
+      </section>
+
+      <!-- Timeline (R15) -->
+      <section class="sp">
+        <h2 class="section-title">Timeline <span class="wf-meta">R15</span></h2>
+        <ol class="tl-horizontal"><li class="done"><b>9 Feb 2026</b>Successor selected</li><li class="now"><b>Now</b>Handover in progress</li><li><b>November 2026</b>Business transfers</li></ol>
+      </section>
+
+      <!-- Glossary term and copy field (R34, R20) -->
+      <section class="sp">
+        <h2 class="section-title">Glossary term and copyable address <span class="wf-meta">R34, R20</span></h2>
+        <p>New entrants build a <button type="button" class="term" data-term="DUIS">DUIS</button> interface and register for <button type="button" class="term" data-term="SMKI">SMKI</button>.</p>
+        <span class="copy-field"><code>consultations@smartdcc.co.uk</code><button type="button" data-copy="consultations@smartdcc.co.uk">Copy</button></span>
+      </section>
+
+      <!-- Result row (R30, R31) -->
+      <section class="sp">
+        <h2 class="section-title">Result row <span class="wf-meta">R30, R31</span></h2>
+        <ul class="rows"><li><div class="meta"><span class="kind">Charging</span><span>Published 03.07.2026</span><span>RY 2026/27</span><span class="badge-current">Current · v2</span></div><h3><a href="#">Indicative Charging Statement RY27/28</a></h3><div class="actions"><a href="#">Download PDF (980 KB)</a><button type="button" class="btn-link">Earlier versions (1)</button></div></li></ul>
+      </section>
+
+      <!-- Best bet (R30) -->
+      <section class="sp">
+        <h2 class="section-title">Search best bet <span class="wf-meta">R30</span></h2>
+        <div class="best-bet"><span class="kind">Definition</span><h3 style="margin:0 0 0.25rem">DUIS: DCC User Interface Specification</h3><p style="margin:0">The XML web service specification that users build to, or buy, in order to send and receive messages through DCC.</p></div>
+      </section>
+
+      <!-- Service list (R41) -->
+      <section class="sp">
+        <h2 class="section-title">Service list <span class="wf-meta">R41</span></h2>
+        <ul class="svc-list" style="max-width:520px"><li><span>DCC User Gateway</span><span class="svc-state ok">Operating normally</span></li><li><span>Wide Area Network: Central and South</span><span class="svc-state degraded">Degraded</span><span class="note">Slower responses for some hubs. Investigating.</span></li></ul>
+      </section>
+
+      <!-- Programme card (R45) -->
+      <section class="sp">
+        <h2 class="section-title">Programme card <span class="wf-meta">R45</span></h2>
+        <div class="prog-grid"><article class="prog"><span class="state on-track">On track</span><h3>Market-wide Half-Hourly Settlement (MHHS)</h3><div class="progress" role="img" aria-label="80% complete"><i style="width:80%"></i></div><dl class="kv"><dt>Stage</dt><dd>Migration</dd><dt>Next milestone</dt><dd>Customer migration wave 3, Nov 2026</dd></dl></article></div>
+      </section>
+
+      <!-- Route step (R51) -->
+      <section class="sp">
+        <h2 class="section-title">Route steps <span class="wf-meta">R51</span></h2>
+        <ol class="steps"><li class="done"><h3>Sign the Smart Energy Code</h3><p style="margin:0">Accede to the SEC through SECCo.</p></li><li><h3>Order a DCC Gateway Connection</h3><p style="margin:0">Order through the Self-Service Interface.</p></li></ol>
+      </section>
+
+      <!-- Calendar item (R26) -->
+      <section class="sp">
+        <h2 class="section-title">Calendar item <span class="wf-meta">R26</span></h2>
+        <ul class="cal"><li><div class="when"><b>7</b><span>Oct</span></div><div><span class="kind">Forum</span><h3 style="font-size:1.0625rem;margin:0.15rem 0">Design Release Forum</h3><p class="wf-meta" style="margin:0">Online · SEC Parties</p></div><div><button type="button" class="btn btn-sm">Register</button></div></li></ul>
+      </section>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>

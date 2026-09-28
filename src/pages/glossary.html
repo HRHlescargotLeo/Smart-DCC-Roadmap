@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossary — Smart DCC prototype</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body>
+  <!-- @@include header.html -->
+  <!-- @@include subnav-3.html -->
+
+  <main id="main" class="flush">
+    <aside class="proposal" aria-label="About this prototype">
+      <div class="container">
+        <p class="proposal-eyebrow">Prototype 3 of 5 · Glossary</p>
+        <div class="proposal-grid">
+          <div><h2>What we're proposing</h2><p>The glossary as a web page, searchable and linked from the header, with each term addressable so any page can link to it. Where a term appears in running text, it can show its definition in place, without leaving the page.</p></div>
+          <div><h2>Why</h2><p>The six onboarding steps on Partner with DCC use DUIS, SMKI, SREPT, RAPP and UEPT, and spell out some of them. The DCC glossary exists, but as a 145 KB PDF linked from What we're working on. A new entrant reading the onboarding steps would need both open side by side.</p></div>
+        </div>
+        <p class="proposal-foot">Definitions are our own drafts for this prototype and need checking by DCC. Try it in a sentence: new entrants need a <button type="button" class="term" data-term="DCC Gateway Connection">DCC Gateway Connection</button> and a <button type="button" class="term" data-term="DUIS">DUIS</button> interface.</p>
+      </div>
+    </aside>
+
+    <div class="band">
+      <div class="container">
+        <h1>Glossary</h1>
+        <p class="lead">Plain definitions of the terms and acronyms used across this site.</p>
+        <div class="field" style="max-width:480px;margin:0"><label for="gloss-q">Find a term</label><input type="search" id="gloss-q" placeholder="For example: SMKI, hub, settlement"></div>
+      </div>
+    </div>
+
+    <div class="container" style="padding-top:1rem">
+      <p class="result-count" id="gloss-count" aria-live="polite"></p>
+      <nav class="az" id="az" aria-label="Jump to letter"></nav>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Typing filters the list and greys out letters with no terms. Every term has its own address, such as glossary.html#term-duis, so a search result or a definition pop-up can link straight to it.</p>
+      <div id="gloss"></div>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+</body>
+</html>
