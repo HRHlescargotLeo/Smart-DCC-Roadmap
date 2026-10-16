@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Send partner enquiries to the right team — Smart DCC quick win</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-pack="quick">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- Quick win Q20 (idea #29) -->
+    <div class="band qw-band">
+      <div class="container">
+        <p class="wf-meta">Quick win 20 of 21 · Partners</p>
+        <h1>Send partner enquiries to the right team</h1>
+        <p class="lead">Two questions at the top of the form do the sorting that someone does by hand now.</p>
+      </div>
+    </div>
+
+    <div class="container qw">
+      <section class="qw-now" aria-labelledby="now-title">
+        <h2 id="now-title">Now</h2>
+        <p>The form asks for:</p><ul class="qw-fields"><li>Name *</li><li>Job title *</li><li>Company *</li><li>Email address *</li><li>How can we work together? *</li><li>Consent for storing submitted data *</li></ul><p>Everything that tells DCC who should reply arrives as free text.</p>
+      </section>
+      <section class="qw-after" aria-labelledby="after-title">
+        <h2 id="after-title">With this change</h2>
+        <form id="enq-form" novalidate>
+            <div class="field"><label for="enq-type">What kind of organisation are you?</label>
+              <select id="enq-type" required>
+                <option value="">Choose one</option>
+                <option value="supplier">Energy supplier</option>
+                <option value="network">Network operator (DNO or iDNO)</option>
+                <option value="other">Energy services or data company</option>
+                <option value="innovator">Innovator or manufacturer</option>
+                <option value="research">University or research body</option>
+                <option value="other2">Something else</option>
+              </select>
+              <p class="field-error" hidden>Choose the closest match</p>
+            </div>
+
+            <div class="tool-callout" id="enq-tool" hidden style="margin-bottom:1.25rem">
+              <div><strong>You can apply directly</strong><p class="wf-meta" style="margin:0.25rem 0 0">Energy services and data companies join as Other Users through the digital onboarding tool. Use this form if you have a question first.</p></div>
+              <a class="btn btn-secondary" href="#">Open the onboarding tool</a>
+            </div>
+
+            <fieldset class="field">
+              <legend>What are you interested in? <span class="wf-meta">(optional)</span></legend>
+              <label class="check"><input type="checkbox" id="int-1" value="join"> Joining the network as a user</label>
+              <label class="check"><input type="checkbox" id="int-2" value="test"> Testing a product in the test labs or with DCC Boxed</label>
+              <label class="check"><input type="checkbox" id="int-3" value="data"> Using smart meter system data</label>
+              <label class="check"><input type="checkbox" id="int-4" value="project"> A joint or government-funded project</label>
+            </fieldset>
+
+            <div class="field cond" data-for="innovator" hidden><label for="enq-product">What would you like to test?</label><input type="text" id="enq-product" placeholder="For example: a smart thermostat, an EV charger"><p class="field-hint">A sentence is enough.</p></div>
+            <div class="field cond" data-for="supplier network" hidden><label for="enq-stage">Where are you with the Smart Energy Code?</label><select id="enq-stage"><option>Not started</option><option>Accession in progress</option><option>Already a SEC Party</option></select></div>
+            <div class="field cond" data-for="research" hidden><label for="enq-data">What data would help your research?</label><textarea id="enq-data" rows="3"></textarea></div>
+
+            <div class="form-grid">
+              <div class="field"><label for="enq-name">Your name</label><input type="text" id="enq-name" required autocomplete="name"><p class="field-error" hidden>Enter your name</p></div>
+              <div class="field"><label for="enq-role">Job title</label><input type="text" id="enq-role" autocomplete="organization-title"></div>
+              <div class="field"><label for="enq-org">Organisation</label><input type="text" id="enq-org" required autocomplete="organization"><p class="field-error" hidden>Enter your organisation</p></div>
+              <div class="field"><label for="enq-email">Work email address</label><input type="email" id="enq-email" required autocomplete="email"><p class="field-error" hidden>Enter an email address like name@example.com</p></div>
+            </div>
+            <div class="field"><label for="enq-msg">Anything else we should know? <span class="wf-meta">(optional)</span></label><textarea id="enq-msg" rows="4"></textarea></div>
+            <div class="field"><label class="check"><input type="checkbox" id="enq-consent" required> I agree to DCC storing these details to reply to my enquiry</label><p class="field-error" hidden>Tick to agree before sending</p></div>
+
+            <div class="team-route" id="team-route" hidden aria-live="polite">This will go to: <strong id="team-name"></strong></div>
+            <button type="submit" class="btn" style="margin-top:1rem">Send enquiry</button>
+          </form>
+          <div class="confirm-box" id="enq-done" hidden>
+            <h2>Thanks, we've got your enquiry</h2>
+            <p>It's gone to the <strong id="enq-done-team"></strong>. Your reference is <strong id="enq-done-ref"></strong>, and we'll reply within five working days. [Sample]</p>
+            <p><a href="#">Back to Partner with DCC</a></p>
+          </div>
+      </section>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The destination team updates as soon as the organisation type is chosen, and the one extra question changes with it. Energy services and data companies are pointed to DCC Connect, the new onboarding tool.</p>
+      <p class="wf-note query" data-note="2"><span class="wf-note-label">Open question</span>Do the three named contacts on Partner with DCC want enquiries directly, or through a shared inbox this form would feed?</p>
+      <p class="qw-related">Also part of prototype 4, in context: <a href="~/pages/partner-enquiry.html">Partner enquiry</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

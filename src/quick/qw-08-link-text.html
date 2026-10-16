@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Links that say where they go — Smart DCC quick win</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-pack="quick">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- Quick win Q08 (idea #26) -->
+    <div class="band qw-band">
+      <div class="container">
+        <p class="wf-meta">Quick win 8 of 21 · Small fixes that add up</p>
+        <h1>Links that say where they go</h1>
+        <p class="lead">Four onboarding steps link the word "here". Name the destination instead.</p>
+      </div>
+    </div>
+
+    <div class="container qw">
+      <section class="qw-now" aria-labelledby="now-title">
+        <h2 id="now-title">Now</h2>
+        <div class="seg qw-seg" role="group" aria-label="Show"><button type="button" data-switch="lt" data-value="now" aria-pressed="true">As written</button><button type="button" data-switch="lt" data-value="sr" aria-pressed="false">As a screen reader lists the links</button></div><div data-switch-panel="lt" data-value="now"><ol class="qw-steps"><li>If you're an energy supplier or network operator… you'll need to become party to the Smart Energy Code. You can find out how <a href="#">here</a>.</li><li>…you'll need a DCC User Gateway Connection. You can order one from <a href="#">here</a>.</li><li>All the steps you need to follow… are right <a href="#">here</a> in the SMKI RAPP.</li><li>Find out more about the tests <a href="#">here</a>.</li></ol></div><div data-switch-panel="lt" data-value="sr" hidden><ul class="qw-linklist"><li>here</li><li>here</li><li>here</li><li>here</li></ul></div>
+      </section>
+      <section class="qw-after" aria-labelledby="after-title">
+        <h2 id="after-title">With this change</h2>
+        <div class="seg qw-seg" role="group" aria-label="Show"><button type="button" data-switch="lt2" data-value="now" aria-pressed="true">As written</button><button type="button" data-switch="lt2" data-value="sr" aria-pressed="false">As a screen reader lists the links</button></div><div data-switch-panel="lt2" data-value="now"><ol class="qw-steps"><li>If you're an energy supplier or network operator, you'll need to <a href="#">become a party to the Smart Energy Code</a>.</li><li>You'll need a DCC User Gateway Connection. <a href="#">Order one through the Customer Service Centre</a>.</li><li>Follow the steps in the <a href="#">SMKI Registration Authority Policies and Procedures (RAPP)</a>.</li><li>Read about the <a href="#">SMKI and Repository Entry Process Tests</a>.</li></ol></div><div data-switch-panel="lt2" data-value="sr" hidden><ul class="qw-linklist"><li>become a party to the Smart Energy Code</li><li>Order one through the Customer Service Centre</li><li>SMKI Registration Authority Policies and Procedures (RAPP)</li><li>SMKI and Repository Entry Process Tests</li></ul></div>
+      </section>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Accessibility</span>Screen reader users often move through a page by its list of links. Four links called "here" give them nothing to go on.</p>
+      
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

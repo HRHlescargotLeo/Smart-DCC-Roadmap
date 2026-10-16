@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Give the public a way in — Smart DCC quick win</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-pack="quick">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- Quick win Q03 (idea #6) -->
+    <div class="band qw-band">
+      <div class="container">
+        <p class="wf-meta">Quick win 3 of 21 · Getting people to the right place</p>
+        <h1>Give the public a way in</h1>
+        <p class="lead">A "Smart meter problem?" link in the header, straight to the help page DCC already has.</p>
+      </div>
+    </div>
+
+    <div class="container qw">
+      <section class="qw-now" aria-labelledby="now-title">
+        <h2 id="now-title">Now</h2>
+        <p>The consumer help page is reached through Contact us, then the "Members of the public" panel. It answers ten common questions well, and its first answer is that your energy supplier is the one to call. That only helps once you've found it.</p>
+      </section>
+      <section class="qw-after" aria-labelledby="after-title">
+        <h2 id="after-title">With this change</h2>
+        <div class="site-mock"><div class="util"><div class="container"><a href="#qw-public-help" class="util-highlight">Smart meter problem?</a><a href="#">Customer Engagement</a><a href="#">Consultations</a><a href="#">Document Centre</a></div></div><div class="main"><div class="container"><span class="wf-placeholder logo">DCC logo</span><nav aria-label="Main (mock)"><a href="#">About DCC</a><a href="#">Our Smart Network</a><a href="#">Enabling Innovation</a><a href="#">News &amp; Events</a><a href="#">Careers</a></nav><div class="right"><a href="#" class="btn btn-sm btn-secondary">Search</a><a href="#" class="btn btn-sm">Partner with DCC</a></div></div></div></div><div class="qw-landing" id="qw-public-help"><p class="wf-meta">Where the link goes: the existing help page, with one question added at the top</p><div class="finder"><div class="field" style="max-width:520px">
+          <label for="finder-q">Choose the closest match</label>
+          <select id="finder-q">
+            <option value="">Choose one</option>
+            <option value="meter">My smart meter isn't working</option>
+            <option value="bill">I have a problem with my bill</option>
+            <option value="ihd">My in-home display isn't working or connected</option>
+            <option value="e7">My Economy 7 or 10 timings are wrong</option>
+            <option value="install">I want a smart meter installed</option>
+            <option value="coverage">Is my area covered?</option>
+            <option value="smets1">My older smart meter hasn't moved to your network</option>
+            <option value="data">I'm worried about my data</option>
+          </select>
+        </div>
+        <div class="finder-answer" id="finder-answer" hidden aria-live="polite">
+          <h3>Answer</h3>
+          <p data-a="p"></p>
+          <dl class="who-box"><dt>Who to contact</dt><dd data-a="who"></dd></dl>
+        </div></div></div>
+      </section>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Content</span>The help page itself already exists. This adds a header link and, optionally, the single question at the top.</p>
+      <p class="qw-related">Also part of prototype 1, in context: <a href="~/pages/public.html">Help for the public</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

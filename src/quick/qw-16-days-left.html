@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show how long is left on each consultation — Smart DCC quick win</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-pack="quick">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- Quick win Q16 (idea #19) -->
+    <div class="band qw-band">
+      <div class="container">
+        <p class="wf-meta">Quick win 16 of 21 · Consultations and news</p>
+        <h1>Show how long is left on each consultation</h1>
+        <p class="lead">Open consultations first, with the number of days left and a clear status.</p>
+      </div>
+    </div>
+
+    <div class="container qw">
+      <section class="qw-now" aria-labelledby="now-title">
+        <h2 id="now-title">Now</h2>
+        <ul class="rows qw-plain"><li><div class="meta"><span>Open</span><span>04.09.2026 – 02.10.2026</span></div><h3>DCC Consultation on Charging Group Weighting Factors and Efficient Usage of the Network</h3></li><li><div class="meta"><span>Closed</span><span>Closed On 25.09.2026</span></div><h3>Proposed Maintenance Deferral Policy</h3></li><li><div class="meta"><span>Open</span><span>18.09.2026 – 30.10.2026</span></div><h3>Consultation on the Virtual Wide Area Network (VWAN) arrangements</h3></li></ul><p>Open and closed consultations look the same, and the reader works out the deadline from a date range.</p>
+      </section>
+      <section class="qw-after" aria-labelledby="after-title">
+        <h2 id="after-title">With this change</h2>
+        <ul class="rows" id="qw-cons"></ul>
+      </section>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Days left are worked out from the closing date, so nobody updates them. Anything closing within seven days is marked. Shown as at 28 September 2026.</p>
+      <p class="qw-related">Also part of prototype 2, in context: <a href="~/pages/consultations.html">Consultations</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

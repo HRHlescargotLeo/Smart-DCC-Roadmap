@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fix the broken email links — Smart DCC quick win</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-pack="quick">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- Quick win Q07 (idea #18) -->
+    <div class="band qw-band">
+      <div class="container">
+        <p class="wf-meta">Quick win 7 of 21 · Small fixes that add up</p>
+        <h1>Fix the broken email links</h1>
+        <p class="lead">Two links send email to addresses that don't exist, because of a stray full stop.</p>
+      </div>
+    </div>
+
+    <div class="container qw">
+      <section class="qw-now" aria-labelledby="now-title">
+        <h2 id="now-title">Now</h2>
+        <ul class="qw-code"><li><span>VWAN consultation, "Please email your response…"</span><code>mailto:consultations@smartdcc.co.uk.</code></li><li><span>Contact us, Switching queries</span><code>mailto:contact.switching@smartdcc.co.uk.</code></li></ul><p>In both, the full stop that ends the sentence is part of the link, so the email goes to an address ending ".uk." and bounces.</p>
+      </section>
+      <section class="qw-after" aria-labelledby="after-title">
+        <h2 id="after-title">With this change</h2>
+        <div class="table-wrap"><table class="data-table"><thead><tr><th>Page</th><th>Link after the fix</th></tr></thead><tbody><tr><td>VWAN consultation</td><td><span class="copy-field"><code>consultations@smartdcc.co.uk</code><button type="button" data-copy="consultations@smartdcc.co.uk">Copy</button></span></td></tr><tr><td>Contact us: Switching queries</td><td><span class="copy-field"><code>contact.switching@smartdcc.co.uk</code><button type="button" data-copy="contact.switching@smartdcc.co.uk">Copy</button></span></td></tr></tbody></table></div><p class="wf-meta" style="margin-top:0.75rem">Shown as text with a copy button, so the address works whether or not the visitor has an email app set up.</p>
+      </section>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Content</span>We found these two by hand. A check of every email link in the CMS would find any others.</p>
+      
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Put the Service Centre in the header — Smart DCC quick win</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-pack="quick">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- Quick win Q05 (idea #33) -->
+    <div class="band qw-band">
+      <div class="container">
+        <p class="wf-meta">Quick win 5 of 21 · Getting people to the right place</p>
+        <h1>Put the Service Centre in the header</h1>
+        <p class="lead">For customers with a live problem, one click to the people who can fix it.</p>
+      </div>
+    </div>
+
+    <div class="container qw">
+      <section class="qw-now" aria-labelledby="now-title">
+        <h2 id="now-title">Now</h2>
+        <p>Customers with an operational problem find the Service Centre's address inside the "Customer queries" panel on Contact us, after a paragraph about escalations.</p>
+      </section>
+      <section class="qw-after" aria-labelledby="after-title">
+        <h2 id="after-title">With this change</h2>
+        <div class="site-mock"><div class="util"><div class="container"><button type="button" class="util-btn" data-disclose="sc-panel" aria-expanded="false">Service Centre</button><a href="#">Customer Engagement</a><a href="#">Consultations</a><a href="#">Document Centre</a></div></div><div class="main"><div class="container"><span class="wf-placeholder logo">DCC logo</span><nav aria-label="Main (mock)"><a href="#">About DCC</a><a href="#">Our Smart Network</a><a href="#">Enabling Innovation</a><a href="#">News &amp; Events</a><a href="#">Careers</a></nav><div class="right"><a href="#" class="btn btn-sm btn-secondary">Search</a><a href="#" class="btn btn-sm">Partner with DCC</a></div></div></div></div><div class="qw-dropdown" id="sc-panel" hidden><h3>Service Centre</h3><p>For incidents and service requests. Our Service Centre is for energy companies and can't help with general smart meter questions.</p><span class="copy-field"><code>servicecentre@smartdcc.co.uk</code><button type="button" data-copy="servicecentre@smartdcc.co.uk">Copy</button></span><ul class="hub-links" style="margin-top:1rem"><li><a href="#">Raise or track an incident in the Self-Service Interface</a></li><li><a href="#">Escalate an unresolved issue</a></li></ul><p class="wf-meta">Opening hours: [to confirm with DCC]</p></div>
+      </section>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>The link opens a small panel rather than a page, so the address is one click away from anywhere on the site.</p>
+      
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

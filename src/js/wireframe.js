@@ -262,20 +262,46 @@
   }
 
   /* --- Prototype navigator: current page and previous / next ------------- */
+  /* The navigator has two tabs: the big improvements (the four prototypes)
+     and the quick wins. Quick-win pages carry data-pack="quick" on <body>;
+     the hub follows its own tabs (#big-improvements / #quick-wins). */
+  function packGroup() {
+    var b = document.body.getAttribute('data-pack');
+    if (b) return b;
+    if (document.body.classList.contains('hub')) return window.location.hash === '#quick-wins' ? 'quick' : 'big';
+    return 'big';
+  }
+  function setPack(group) {
+    Array.prototype.slice.call(document.querySelectorAll('nav[data-group]')).forEach(function (n) {
+      n.hidden = n.getAttribute('data-group') !== group;
+    });
+    Array.prototype.slice.call(document.querySelectorAll('.pack-tabs a')).forEach(function (a) {
+      if (a.getAttribute('data-pack') === group) a.setAttribute('aria-current', 'true');
+      else a.removeAttribute('aria-current');
+    });
+  }
+
   function initProtoNav() {
+    var group = packGroup();
+    setPack(group);
     var file = (window.location.pathname.split('/').pop() || 'index.html').replace('.html', '') || 'index';
-    var links = Array.prototype.slice.call(document.querySelectorAll('.proto-links a[data-proto]'));
+    var links = Array.prototype.slice.call(document.querySelectorAll('nav[data-group="' + group + '"] .proto-links a[data-proto]'));
+    Array.prototype.slice.call(document.querySelectorAll('.proto-links a[aria-current]')).forEach(function (a) { a.removeAttribute('aria-current'); });
     var index = -1;
     links.forEach(function (a, i) {
       var match = a.getAttribute('data-proto').split(' ').indexOf(file) !== -1;
       if (match) { a.setAttribute('aria-current', 'page'); index = i; }
     });
-    var current = document.querySelector('.proto-links a[aria-current]');
-    if (current && current.scrollIntoView && window.innerWidth < 1024) {
+    var current = document.querySelector('nav[data-group="' + group + '"] .proto-links a[aria-current]');
+    if (current) {
       var list = current.closest('.proto-links');
-      if (list) list.scrollLeft = current.offsetLeft - 16;
+      if (list && list.scrollWidth > list.clientWidth) {
+        var li = current.getBoundingClientRect(), lr = list.getBoundingClientRect();
+        if (li.left < lr.left || li.right > lr.right) list.scrollLeft += li.left - lr.left - 16;
+      }
     }
     var pager = document.querySelector('[data-proto-pager]');
+    if (pager) pager.innerHTML = '';
     if (!pager || index < 0) return;
     function label(a) { return a.textContent.replace(/\s+/g, ' ').trim(); }
     var html = '';
@@ -1226,6 +1252,100 @@
     });
   }
 
+  /* ======================================================================
+     Quick wins (Q01–Q21) and the hub's two tabs
+     ====================================================================== */
+
+  /* Hub: Big improvements / Quick wins tabs, linked to the navigator tabs */
+  function initHubTabs() {
+    var quickTab = $('[data-tab="hub-quick"]'), bigTab = $('[data-tab="hub-big"]');
+    if (!quickTab || !bigTab) return;
+    function sync() {
+      var quick = window.location.hash === '#quick-wins';
+      (quick ? quickTab : bigTab).click();
+    }
+    [bigTab, quickTab].forEach(function (t) {
+      t.addEventListener('click', function () {
+        var hash = t === quickTab ? '#quick-wins' : '#big-improvements';
+        if (window.location.hash !== hash) { try { window.history.replaceState(null, '', hash); } catch (e) { window.location.hash = hash; } }
+        initProtoNav();
+      });
+    });
+    window.addEventListener('hashchange', sync);
+    sync();
+  }
+
+  /* Before/after switches: [data-switch=group][data-value] buttons show the
+     matching [data-switch-panel=group][data-value] panel */
+  function initSwitches() {
+    $all('[data-switch]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var g = b.getAttribute('data-switch'), v = b.getAttribute('data-value');
+        $all('[data-switch="' + g + '"]').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        $all('[data-switch-panel="' + g + '"]').forEach(function (p) { p.hidden = p.getAttribute('data-value') !== v; });
+      });
+    });
+  }
+
+  /* Small disclosure panels, such as the Service Centre panel (Q05) */
+  function initDisclose() {
+    $all('[data-disclose]').forEach(function (b) {
+      var panel = document.getElementById(b.getAttribute('data-disclose'));
+      if (!panel) return;
+      b.addEventListener('click', function () {
+        var open = panel.hidden;
+        panel.hidden = !open;
+        b.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !panel.hidden) { panel.hidden = true; b.setAttribute('aria-expanded', 'false'); b.focus(); }
+      });
+    });
+  }
+
+  /* Contact us: one question, one answer (Q04) */
+  function initContactPicker() {
+    var sel = $('#contact-q');
+    if (!sel) return;
+    sel.addEventListener('change', function () {
+      $all('[data-contact]').forEach(function (p) { p.hidden = p.getAttribute('data-contact') !== sel.value; });
+    });
+  }
+
+  /* Readable sitemap with a filter (Q06) */
+  function initSitemap() {
+    var q = $('#sitemap-q');
+    if (!q) return;
+    q.addEventListener('input', function () {
+      var v = q.value.trim().toLowerCase(), shown = 0;
+      $all('#sitemap section').forEach(function (s) {
+        var any = false;
+        $all('li', s).forEach(function (li) {
+          var hit = !v || li.textContent.toLowerCase().indexOf(v) !== -1 || $('h3', s).textContent.toLowerCase().indexOf(v) !== -1;
+          li.hidden = !hit;
+          if (hit) { any = true; shown += 1; }
+        });
+        s.hidden = !any;
+      });
+      $('#sitemap-none').hidden = shown > 0;
+    });
+  }
+
+  /* Consultation lists for Q16 (days left) and Q18 (latest consultations) */
+  function initQuickConsultations() {
+    function row(c) {
+      return '<li><div class="meta">' + statusChip(c) + '<span>' + consDates(c) + '</span></div><h3><a href="#">' + esc(c.title) + '</a></h3></li>';
+    }
+    var open = CONS.filter(function (c) { return c.status === 'open'; }).sort(function (a, b) { return a.closes < b.closes ? -1 : 1; });
+    var a = $('#qw-cons');
+    if (a) {
+      var rest = CONS.filter(function (c) { return c.status === 'closed' || c.status === 'response'; }).slice(0, 2);
+      a.innerHTML = open.concat(rest).map(row).join('');
+    }
+    var b = $('#latest-cons');
+    if (b) b.innerHTML = open.slice(0, 3).map(row).join('');
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initNav();
     initAccordions();
@@ -1255,5 +1375,11 @@
     initProgrammes();
     initJoin();
     initPartnerEnquiry();
+    initSwitches();
+    initDisclose();
+    initContactPicker();
+    initSitemap();
+    initQuickConsultations();
+    initHubTabs();
   });
 })();

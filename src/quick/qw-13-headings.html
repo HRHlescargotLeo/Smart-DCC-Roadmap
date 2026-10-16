@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Put headings in the right order — Smart DCC quick win</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-pack="quick">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- Quick win Q13 (idea #41) -->
+    <div class="band qw-band">
+      <div class="container">
+        <p class="wf-meta">Quick win 13 of 21 · Small fixes that add up</p>
+        <h1>Put headings in the right order</h1>
+        <p class="lead">On the homepage, six menu headings come before the page's main heading.</p>
+      </div>
+    </div>
+
+    <div class="container qw">
+      <section class="qw-now" aria-labelledby="now-title">
+        <h2 id="now-title">Now</h2>
+        <p class="wf-meta">The homepage outline, as a screen reader or search engine reads it</p><ol class="qw-outline"><li><b>H2</b> About DCC</li><li><b>H2</b> Our Smart Network</li><li><b>H2</b> Enabling innovation</li><li><b>H2</b> About DCC</li><li><b>H2</b> Our Smart Network</li><li><b>H2</b> Enabling innovation</li><li class="main"><b>H1</b> Smarter energy for a greener tomorrow</li><li><b>H2</b> One smart meter at a time</li><li><b>H2</b> Transforming Britain's energy infrastructure</li><li><b>H2</b> Helping turn your vision into reality</li></ol>
+      </section>
+      <section class="qw-after" aria-labelledby="after-title">
+        <h2 id="after-title">With this change</h2>
+        <p class="wf-meta">The same page, with menu labels no longer marked as headings</p><ol class="qw-outline"><li class="main"><b>H1</b> Smarter energy for a greener tomorrow</li><li><b>H2</b> One smart meter at a time</li><li class="sub"><b>H3</b> Smart meters on DCC network</li><li class="sub"><b>H3</b> CO₂ emissions saved</li><li><b>H2</b> Transforming Britain's energy infrastructure</li><li><b>H2</b> Helping turn your vision into reality</li><li><b>H2</b> Shape the future of energy</li></ol>
+      </section>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Accessibility</span>Nothing changes visually. The menu labels become plain text, and every page then starts its outline with its own H1.</p>
+      
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

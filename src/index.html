@@ -17,11 +17,11 @@
         <span class="wf-placeholder logo">DCC logo</span>
         <span class="hub-by">Prepared by ClerksWell</span>
       </div>
-      <h1>Four ideas for smartdcc.co.uk</h1>
-      <p class="lead">Clickable prototypes of four improvements to the Smart DCC website, timed around the move to DCC2 in November. Each one is shown in DCC's own colours, type and photography, so you can see how it would sit on the live site.</p>
+      <h1>Improvements for smartdcc.co.uk</h1>
+      <p class="lead">Clickable prototypes in two sets. Four big improvements that change how parts of the site work, and 21 quick wins, each small enough to do on its own. Everything is shown in DCC's own colours, type and photography.</p>
       <div class="wf-hub-meta">
-        <span>Version 2</span>
-        <span>28 September 2026</span>
+        <span>Version 3</span>
+        <span>16 October 2026</span>
         <span>Designed prototypes</span>
         <span>Live figures and sample data</span>
       </div>
@@ -30,8 +30,16 @@
 
   <main id="main">
     <div class="container">
+      <!-- Two sets: big improvements and quick wins -->
+      <div class="tabs hub-tabs" role="tablist" aria-label="Sets of improvements">
+        <button type="button" class="tab active" data-tab="hub-big" aria-selected="true">Big improvements <span class="tab-count">4</span></button>
+        <button type="button" class="tab" data-tab="hub-quick" aria-selected="false">Quick wins <span class="tab-count">21</span></button>
+      </div>
+      <div class="hub-panels">
+        <div class="tab-panel active" id="hub-big" role="tabpanel">
       <section aria-labelledby="protos-title">
-        <h2 class="hub-h2" id="protos-title">The prototypes</h2>
+        <h2 class="visually-hidden" id="protos-title">Big improvements</h2>
+        <p class="hub-intro">Four prototypes, each a set of pages that work together. These are the larger pieces of work.</p>
         <ol class="proto-list">
           <li class="proto-card">
             <a class="proto-thumb" href="~/pages/home.html" tabindex="-1" aria-hidden="true"><span class="wf-placeholder">The front door</span></a>
@@ -76,12 +84,21 @@
         </ol>
       </section>
 
+        </div>
+        <div class="tab-panel" id="hub-quick" role="tabpanel">
+          <section aria-labelledby="qw-title">
+            <h2 class="visually-hidden" id="qw-title">Quick wins</h2>
+            <p class="hub-intro">Smaller changes, each shown on its own page with what the site does now and what it would do after. Any of them can go ahead without the others, or without the big improvements.</p>
+<!-- @@include quick-cards.html -->
+          </section>
+        </div>
+      </div>
       <section class="hub-notes" aria-labelledby="review-title">
         <div>
           <h2 class="hub-h2" id="review-title">How to review</h2>
           <ul>
-            <li>Everything interactive works: filters, the response form and its saved draft, charts, downloads, the onboarding route and every form. Links to pages outside these four go nowhere by design.</li>
-            <li>Use the bar at the top to move between prototypes, and the grey bar below it to move between pages within one. Switch <strong>Notes on</strong> (top right) to see what each page proposes and why, plus notes on behaviour (yellow) and open questions for DCC (red). Notes start switched off.</li>
+            <li>Everything interactive works: filters, the response form and its saved draft, charts, downloads, the onboarding route, the before and after switches on the quick wins, and every form. Links to pages outside the pack go nowhere by design.</li>
+            <li>Use the two tabs at the top to switch between the big improvements and the quick wins, then the bar below them to move between prototypes. Within a big improvement, the white bar moves between its pages. Previous and Next at the foot of each page step through the set in order. Switch <strong>Notes on</strong> (top right) to see what each page proposes and why, plus notes on behaviour (yellow) and open questions for DCC (red). Notes start switched off.</li>
             <li>Figures marked live, such as meter numbers and the performance series, come from smartdcc.co.uk on 28 September 2026. Service states, incidents, timescales and dates for events are sample data.</li>
             <li>Photography is DCC's own, loaded from smartdcc.co.uk. Where it can't load, a brand-colour illustration shows instead. DCC's own header and footer aren't reproduced. Where a change to the header is part of the idea, it's drawn as a simple block.</li>
             <li>Works on a phone: open this page on your mobile to check the layouts.</li>

@@ -53,3 +53,13 @@ Every section in `src/` carries an HTML comment naming the requirement it meets.
 - R52 Digital onboarding tool promoted for Other Users; descriptive link text, no "here"; term definitions shown in place, without linking to the parked glossary. (#26, #27)
 - R53 Partner enquiry routed by organisation type with a conditional question and visible destination team. (#29)
 - R54 Customer quote placeholder per route, drawn from existing testimonials. (#30)
+
+## Quick wins (V3)
+Each quick win is a standalone page with "Now" and "With this change", and can be bought on its own. No estimates.
+- Q01 Licence page brought up to date (#2) · Q02 Transition notice (#3)
+- Q03 A way in for the public (#6) · Q04 Contact us that asks what you need (#32) · Q05 Service Centre in the header (#33) · Q06 Readable sitemap (#39)
+- Q07 Email links fixed (#18) · Q08 Descriptive link text (#26) · Q09 One latest-plan link (#17) · Q10 All three values (#38) · Q11 Out-of-date content retired (#35) · Q12 Social links (#40) · Q13 Heading order (#41)
+- Q14 Accessible headline numbers (#10) · Q15 Statistics as text (#11)
+- Q16 Days left on consultations (#19) · Q17 Status colours (#47) · Q18 Latest consultations filled in (#37) · Q19 Dates on news (#34)
+- Q20 Routed partner enquiry form (#29) · Q21 Customer quotes where they help (#30)
+Not included: idea #1 (ownership page), as DCC has since published its own Licence Renewal page; #48 (Document Centre on mobile), which belongs to the separate search project.

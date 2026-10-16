@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Show all three values — Smart DCC quick win</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-pack="quick">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- Quick win Q10 (idea #38) -->
+    <div class="band qw-band">
+      <div class="container">
+        <p class="wf-meta">Quick win 10 of 21 · Small fixes that add up</p>
+        <h1>Show all three values</h1>
+        <p class="lead">Who we are promises three core values and shows one.</p>
+      </div>
+    </div>
+
+    <div class="container qw">
+      <section class="qw-now" aria-labelledby="now-title">
+        <h2 id="now-title">Now</h2>
+        <blockquote class="qw-quote"><p>At the DCC we have three core values that guide us in our work.</p><cite>From the live page</cite></blockquote><p>Below it, the page shows one: Partnering with people. Either two have gone missing in an edit, or the introduction is out of date.</p>
+      </section>
+      <section class="qw-after" aria-labelledby="after-title">
+        <h2 id="after-title">With this change</h2>
+        <div class="seg qw-seg" role="group" aria-label="Show"><button type="button" data-switch="val" data-value="a" aria-pressed="true">Option A: show all three</button><button type="button" data-switch="val" data-value="b" aria-pressed="false">Option B: reword the introduction</button></div><div data-switch-panel="val" data-value="a"><div class="grid grid-3 qw-values"><div class="card"><h3 class="card-title">Partnering with people</h3><p class="card-text">We think working smarter means working together. We believe in collaboration, fostering enjoyable relationships with our customers and people, not simply necessary ones.</p></div><div class="card"><h3 class="card-title">[Second value]</h3><p class="card-text">[Wording from DCC]</p></div><div class="card"><h3 class="card-title">[Third value]</h3><p class="card-text">[Wording from DCC]</p></div></div></div><div data-switch-panel="val" data-value="b" hidden><div class="qw-page"><p>Our values guide how we work with our customers and with each other.</p><div class="card" style="max-width:420px"><h3 class="card-title">Partnering with people</h3><p class="card-text">We think working smarter means working together…</p></div></div></div>
+      </section>
+      <p class="wf-note query" data-note="1"><span class="wf-note-label">Open question</span>What are the other two values, and are they still current under DCC 2 Ltd?</p>
+      
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

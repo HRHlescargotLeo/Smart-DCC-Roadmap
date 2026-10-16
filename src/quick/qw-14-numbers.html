@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Headline numbers everyone can read — Smart DCC quick win</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-pack="quick">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- Quick win Q14 (idea #10) -->
+    <div class="band qw-band">
+      <div class="container">
+        <p class="wf-meta">Quick win 14 of 21 · Data</p>
+        <h1>Headline numbers everyone can read</h1>
+        <p class="lead">The meter counter and CO₂ dial, with their real values available to screen readers.</p>
+      </div>
+    </div>
+
+    <div class="container qw">
+      <section class="qw-now" aria-labelledby="now-title">
+        <h2 id="now-title">Now</h2>
+        <div class="seg qw-seg" role="group" aria-label="Show"><button type="button" data-switch="hn" data-value="look" aria-pressed="true">What you see</button><button type="button" data-switch="hn" data-value="hear" aria-pressed="false">What a screen reader hears</button></div><div data-switch-panel="hn" data-value="look"><p>A rolling counter showing the number of meters, and a dial whose needle shows CO₂ saved. The dial has no number on it.</p></div><div data-switch-panel="hn" data-value="hear" hidden><p class="qw-hear">"0 1 2 3 4 5 6 7 8 9, 0 1 2 3 4 5 6 7 8 9, comma, 0 1 2 3 4 5 6 7 8 9…" (eight times). "Smart meters on DCC network." "0, 375,000, 750,000, 1,125,000, 1,500,000. CO2 emissions saved."</p></div>
+      </section>
+      <section class="qw-after" aria-labelledby="after-title">
+        <h2 id="after-title">With this change</h2>
+        <div class="meter-band"><div class="meter-grid"><div><div class="meter" data-meter="meters"></div><p class="meter-caption">Smart meters on the DCC network</p></div><div><svg class="dial" viewBox="0 0 160 90" data-dial="co2" data-max="1500000" aria-hidden="true"></svg><p class="meter-caption"><span data-stat="co2"></span> tonnes of CO₂ saved in the past year</p></div></div></div><p class="qw-hear" style="margin-top:1rem">A screen reader now hears: "38,965,999. Smart meters on the DCC network. 1,440,963 tonnes of CO₂ saved in the past year."</p>
+      </section>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Accessibility</span>The digits look the same. They're hidden from screen readers, and the real number is given once instead.</p>
+      <p class="qw-related">Also part of prototype 1, in context: <a href="~/pages/home.html">the homepage</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

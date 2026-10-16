@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fill in "Latest consultations" — Smart DCC quick win</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-pack="quick">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- Quick win Q18 (idea #37) -->
+    <div class="band qw-band">
+      <div class="container">
+        <p class="wf-meta">Quick win 18 of 21 · Consultations and news</p>
+        <h1>Fill in "Latest consultations"</h1>
+        <p class="lead">The Customer Engagement block of that name lists no consultations.</p>
+      </div>
+    </div>
+
+    <div class="container qw">
+      <section class="qw-now" aria-labelledby="now-title">
+        <h2 id="now-title">Now</h2>
+        <div class="qw-page"><h3 class="qw-page-h">Latest consultations</h3><p>We're keen to hear your views on a number of proposals we would like to make connected to our network.</p><a class="btn btn-sm btn-secondary" href="#">View all consultations</a></div><p>That's the whole block.</p>
+      </section>
+      <section class="qw-after" aria-labelledby="after-title">
+        <h2 id="after-title">With this change</h2>
+        <div class="qw-page"><h3 class="qw-page-h">Latest consultations</h3><p>We're keen to hear your views on a number of proposals we would like to make connected to our network.</p><ul class="rows" id="latest-cons"></ul><a class="btn btn-sm btn-secondary" href="#">View all consultations</a></div>
+      </section>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Behaviour</span>Shows the three open consultations closing soonest, taken from the consultations listing. Shown as at 28 September 2026.</p>
+      
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

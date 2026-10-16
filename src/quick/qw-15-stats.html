@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Statistics that are there from the start — Smart DCC quick win</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-pack="quick">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- Quick win Q15 (idea #11) -->
+    <div class="band qw-band">
+      <div class="container">
+        <p class="wf-meta">Quick win 15 of 21 · Data</p>
+        <h1>Statistics that are there from the start</h1>
+        <p class="lead">Put the numbers in the page itself, rather than filling them in as each card scrolls into view.</p>
+      </div>
+    </div>
+
+    <div class="container qw">
+      <section class="qw-now" aria-labelledby="now-title">
+        <h2 id="now-title">Now</h2>
+        <p class="wf-meta">The Smart meter statistics page, as a search engine or link preview reads it before anyone scrolls</p><div class="stat-row qw-zero"><div><b>0 0 0 0</b><span>Average daily connection rate</span></div><div><b>—</b><span>Connected premises</span></div><div><b>—</b><span>Connected devices</span></div><div><b>0 0 0 0</b><span>CO₂ emissions saved</span></div></div>
+      </section>
+      <section class="qw-after" aria-labelledby="after-title">
+        <h2 id="after-title">With this change</h2>
+        <div class="stat-row"><div><b data-stat="dailyRate"></b><span>Average weekday SMETS2 connections</span></div><div><b data-stat="premises"></b><span>Homes and small businesses</span></div><div><b data-stat="devices"></b><span>Connected devices</span></div><div><b data-stat="co2"></b><span>Tonnes of CO₂ saved in the past year</span></div></div><p class="wf-meta" style="margin-top:0.5rem">Figures from the live page, 28 September 2026. The count-up animation can stay; it starts from the real number already in the page.</p>
+      </section>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Content</span>Search engines, link previews on LinkedIn and Teams, and some screen readers see the page before any scrolling happens.</p>
+      <p class="qw-related">Also part of prototype 3, in context: <a href="~/pages/performance.html">Network performance</a></p>
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>

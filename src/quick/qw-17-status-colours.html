@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Give status a colour — Smart DCC quick win</title>
+  <link rel="stylesheet" href="~/css/base.css">
+  <link rel="stylesheet" href="~/css/components.css">
+  <link rel="stylesheet" href="~/css/theme.css">
+</head>
+<body data-pack="quick">
+  <!-- @@include header.html -->
+
+  <main id="main" class="flush">
+    <!-- Quick win Q17 (idea #47) -->
+    <div class="band qw-band">
+      <div class="container">
+        <p class="wf-meta">Quick win 17 of 21 · Consultations and news</p>
+        <h1>Give status a colour</h1>
+        <p class="lead">A small set of status colours, used the same way wherever something is open, current or affected.</p>
+      </div>
+    </div>
+
+    <div class="container qw">
+      <section class="qw-now" aria-labelledby="now-title">
+        <h2 id="now-title">Now</h2>
+        <p>Open, Closed and DCC Response are shown as plain words in the same style. So is "Version: 2" on documents. Nothing tells the eye what needs attention.</p>
+      </section>
+      <section class="qw-after" aria-labelledby="after-title">
+        <h2 id="after-title">With this change</h2>
+        <div class="qw-swatches"><div><h3>Consultations</h3><span class="status open">Open</span> <span class="days-left soon">Closes in 4 days</span><br><span class="status upcoming">Upcoming</span> <span class="status response">DCC response</span> <span class="status closed">Closed</span></div><div><h3>Documents</h3><span class="badge-current">Current · v2</span> <span class="badge-old">Superseded</span></div><div><h3>Service and programmes</h3><span class="svc-state ok">Operating normally</span><br><span class="svc-state degraded">Degraded</span><br><span class="state on-track">On track</span> <span class="state at-risk">At risk</span></div></div>
+      </section>
+      <p class="wf-note" data-note="1"><span class="wf-note-label">Content</span>Green and amber are additions to the DCC palette, kept for status only so they don't compete with the brand colours. Each one passes contrast checks and always comes with a word, never colour alone.</p>
+      
+    </div>
+  </main>
+
+  <!-- @@include footer.html -->
+  <script src="~/js/data.js"></script>
+  <script src="~/js/wireframe.js"></script>
+  <script src="~/js/photos.js"></script>
+</body>
+</html>
